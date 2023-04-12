@@ -1,0 +1,25 @@
+	
+PLANNING 
+
+Entro il 15 Aprile:
+		- portarsi alla pari con la spiegazione e fare esercizi.
+		- Iniziare a fare costruttori, classi, oggetti e funzioni base.
+
+Entro il 19 Aprile:
+		- termine costruttori, classi e oggetti.
+
+Dopo il 19 Aprile:
+		- inizio delle funzioni principali, cominciando a traiardare a merda.
+		- in parallelo, inizio dell'interfaccia GUI.
+
+
+
+POSSIBILI Giorni per incontrarci:
+
+Lunedì:		14:30 - 18:30 (variabile)
+Martedì:	14:30 - 18:30 (variabile)
+Giovedì:	15:00 - 18:30 (variabile)
+Venerdì:	17:00 - 18:30 (variabile)
+
+-> 3 volte a settimana massimo, la frequenza è in base alla progressione del lavoro.
+-> Ovviamente l’orario può variare in base agli impegni e alle lezioni.
