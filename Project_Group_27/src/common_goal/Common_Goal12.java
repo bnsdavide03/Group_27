@@ -1,4 +1,4 @@
-package main;
+package common_goal;
 
 public class Common_Goal12 extends Common_Goal{
 	

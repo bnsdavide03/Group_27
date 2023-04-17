@@ -1,8 +1,8 @@
-package main;
+package common_goal;
 
-public class Common_Goal10 extends Common_Goal{
+public class Common_Goal09 extends Common_Goal{
 	
-	public Common_Goal10(int Numero_Giocatori) {
+	public Common_Goal09(int Numero_Giocatori) {
 		super(Numero_Giocatori);
 		this.remaningCards[1]=4;
 		this.remaningCards[3]=8;
@@ -14,7 +14,7 @@ public class Common_Goal10 extends Common_Goal{
 		{
 			this.remaningCards[0]=2;
 		}
-		this.description="Due righe formate ciascuna da 5 diversi tipi di tessere";
+		this.description="due colonne formate ciascuna da 6 diversi tipi di tessere";
 		// TODO Auto-generated constructor stub
 	}
 

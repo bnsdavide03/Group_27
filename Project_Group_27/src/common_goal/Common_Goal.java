@@ -1,4 +1,4 @@
-package main;
+package common_goal;
 
 public abstract class Common_Goal {
 		
