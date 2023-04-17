@@ -1,8 +1,8 @@
 package main;
 
-public class Common_Goal2 extends Common_Goal{
+public class Common_Goal02 extends Common_Goal{
 	
-	public Common_Goal2(int Numero_Giocatori) {
+	public Common_Goal02(int Numero_Giocatori) {
 		super(Numero_Giocatori);
 		this.description="quattro tessere dello stesso tipo ai quattro angoli della libreria";
 		

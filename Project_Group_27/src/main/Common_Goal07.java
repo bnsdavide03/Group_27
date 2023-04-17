@@ -1,8 +1,8 @@
 package main;
 
-public class Common_Goal7 extends Common_Goal{
+public class Common_Goal07 extends Common_Goal{
 	
-	public Common_Goal7(int Numero_Giocatori) {
+	public Common_Goal07(int Numero_Giocatori) {
 		super(Numero_Giocatori);
 		this.description="cinque tessere dello stesso tipo che formano una diagonale";
 		// TODO Auto-generated constructor stub

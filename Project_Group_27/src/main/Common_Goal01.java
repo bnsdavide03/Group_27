@@ -1,8 +1,8 @@
 package main;
 
-public class Common_Goal1 extends Common_Goal{
+public class Common_Goal01 extends Common_Goal{
 	
-	public Common_Goal1(int Numero_Giocatori) {
+	public Common_Goal01(int Numero_Giocatori) {
 		super(Numero_Giocatori);
 		this.description="Sei gruppi separati formati ciascuno da duetessere adiacenti dello stesso tipo. le tessere di un gruppo possono essere diverse da quelle di un altro gruppo";
 		

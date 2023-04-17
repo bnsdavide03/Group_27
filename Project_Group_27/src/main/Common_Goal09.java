@@ -1,8 +1,8 @@
 package main;
 
-public class Common_Goal9 extends Common_Goal{
+public class Common_Goal09 extends Common_Goal{
 	
-	public Common_Goal9(int Numero_Giocatori) {
+	public Common_Goal09(int Numero_Giocatori) {
 		super(Numero_Giocatori);
 		this.description="due colonne formate ciascuna da 6 diversi tipi di tessere";
 		// TODO Auto-generated constructor stub
