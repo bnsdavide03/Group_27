@@ -1,7 +1,7 @@
 package main;
 
 public class Map {
-	//Tile[][] map= new Tile[9][9]; //verificare correttezza sintassi dopo aver creato classe Tile
+	//private Tile[9][9]; //verificare correttezza sintassi dopo aver creato classe Tile
 	void Map()
 	{
 		//random generator per settare tiles sulla mappa, serve la classe Tiles
