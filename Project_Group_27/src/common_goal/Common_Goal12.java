@@ -14,7 +14,7 @@ public class Common_Goal12 extends Common_Goal{
 		{
 			this.remaningCards[0]=2;
 		}
-		this.description="Cinque colonne di altezza crescente o decrescente: apartire dalla prima colonna a sinistra o a destra, ogni colonna successiva deve essere formata da una tessera in più. Le tessere possono essere di qualsiasi tipo";
+		this.description="Cinque colonne di altezza crescente o decrescente: a partire dalla prima colonna a sinistra o a destra, ogni colonna successiva deve essere formata da una tessera in più. Le tessere possono essere di qualsiasi tipo";
 		// TODO Auto-generated constructor stub
 	}
 

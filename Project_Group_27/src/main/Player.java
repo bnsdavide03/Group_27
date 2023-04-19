@@ -1,12 +1,12 @@
 package main;
-
+import personal_card.*;
 public class Player {
 	private int number;
 	private String name;
 	private int points;
 	private boolean chair;
-	//private PersonalCard personalCard quando sarà creata la classe
-	private Library library;
+	private Personal_Card personalCard;
+	Library library;
 	
 	void Giocatore(String name) {
 	
