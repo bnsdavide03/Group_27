@@ -2,32 +2,19 @@ package main;
 
 public class Tile {
 	
-	enum Colors {
-		
-		PINK, BLUE, LIGHTBLUE, GREEN, YELLOW, WHITE
-		
-	}
-	
-	Colors color;
+	Color color;
 	Position P;
 	
+	public void Tile() {
+		
+	}
 
-public void Tile() {
+	public Color getColor() {
+		return this.color;
+	}
+
+	public Position getP() {
+		return P;
+	}
 	
-	
-}
-
-
-public Colors getColor() {
-	
-	return this.color;
-	
-}
-
-
-public Position getP() {
-	return P;
-}
-	
-
 }

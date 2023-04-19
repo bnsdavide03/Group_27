@@ -1,6 +1,6 @@
 package main;
 
-public class Giocatore {
+public class Player {
 	private int number;
 	private String name;
 	private int points;

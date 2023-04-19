@@ -1,13 +1,20 @@
 package main;
 
 public class Library {
-	//private Tile personalTiles[6][5];
+	private Tile personalTiles[][]= new Tile[6][5];
 	void Library()
 	{
-		//deve creare la libreria, scegliendo tra una delle disponibili del gioco
+		//create the empty library
+		for(int i=0;i<6;i++)
+		{
+			for(int j=0;j<5;j++)
+			{
+				this.personalTiles[i][j]=null;
+			}
+		}
 	}
-	/*Tile[][] getPersonalTile()
+	Tile[][] getPersonalTile()
 	{
 		return this.personalTiles;
-	}*/
+	}
 }
