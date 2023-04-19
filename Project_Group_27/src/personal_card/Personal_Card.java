@@ -9,7 +9,6 @@ public abstract class Personal_Card {
 	public Color[][]  get_color_position()
 	{
 		return card;
-		
 	}
 
 }
