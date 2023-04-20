@@ -1,20 +1,20 @@
 package main;
 
 public class Library {
-	private Tile personalTiles[][]= new Tile[6][5];
-	void Library()
+	private Tile library[][]= new Tile[6][5];
+	public Library()
 	{
 		//create the empty library
 		for(int i=0;i<6;i++)
 		{
 			for(int j=0;j<5;j++)
 			{
-				this.personalTiles[i][j]=null;
+				this.library[i][j]=null;
 			}
 		}
 	}
-	Tile[][] getPersonalTile()
+	Tile[][] getLibrary()
 	{
-		return this.personalTiles;
+		return this.library;
 	}
 }
