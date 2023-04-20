@@ -1,22 +1,35 @@
-	
-PLANNING 
+PLANNING
+
+
+PASSATE:
 
 Entro il 15 Aprile:
-		- portarsi alla pari con la spiegazione e fare esercizi.
-		- Iniziare a fare costruttori, classi, oggetti e funzioni base.
+- portarsi alla pari con la spiegazione e fare esercizi.
+- Iniziare a fare costruttori, classi, oggetti e funzioni base.
 
 Entro il 19 Aprile:
-		- termine costruttori, classi e oggetti.
+- termine costruttori, classi e oggetti.
 
 Dopo il 19 Aprile:
-		- inizio delle funzioni principali, cominciando a traiardare a merda.
-		- in parallelo, inizio dell'interfaccia GUI.
+- inizio delle funzioni principali, cominciando a traiardare.
+- in parallelo, inizio dell'interfaccia GUI.
 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+IN AVANZAMENTO:
+
+Entro il 1 Maggio:
+- Continuazione avanzata del gioco in modo unito.
+- Sapere come fare e con cosa fare la GUI del gioco.
+
+
+---------------------------------------------------------------------------------------------------------------------------
 
 
 POSSIBILI Giorni per incontrarci:
 
-Lunedì:		14:30 - 18:30 (variabile)
+Lunedì:	14:30 - 18:30 (variabile)
 Martedì:	14:30 - 18:30 (variabile)
 Giovedì:	15:00 - 18:30 (variabile)
 Venerdì:	17:00 - 18:30 (variabile)
