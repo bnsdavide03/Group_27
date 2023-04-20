@@ -1,14 +1,16 @@
 package personal_card;
 
-import main.Color;
+import java.util.ArrayList;
+
+import main.Tile;
 
 public abstract class Personal_Card {
-	protected Color card[][];
+	protected ArrayList<Tile> posizione= new ArrayList<Tile>();
 	
 	
-	public Color[][]  get_color_position()
+	public  ArrayList<Tile>  get_color_position()
 	{
-		return card;
+		return this.posizione;
 	}
 
 }
