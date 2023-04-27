@@ -7,6 +7,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import java.awt.FlowLayout;
 
 public class start extends JFrame {
 
@@ -35,6 +38,8 @@ public class start extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 689, 447);
 		contentPane = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) contentPane.getLayout();
+		flowLayout.setAlignOnBaseline(true);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
