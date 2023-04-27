@@ -1,3 +1,5 @@
+ENTRO IL 19 APRILE:
+
 Compiti:
 
 1)	Dichiarazione classe Giocatore + dichiarazione attributi            ------>	Matteo
@@ -14,3 +16,6 @@ Compiti:
 6)	Creazione classe Library comprendente di attributi e funzioni       ------>	Gabriel
 
 7)	Dichiarazione classe Map + dichiarazione attributi 		    ------>	Gabriel
+
+
+---------------------------------------------------------------------------------------------------------------------------
