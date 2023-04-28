@@ -1,6 +1,5 @@
 PLANNING
 
-
 PASSATE:
 
 Entro il 15 Aprile:
@@ -19,20 +18,17 @@ Dopo il 19 Aprile:
 
 IN AVANZAMENTO:
 
-Entro il 1 Maggio:
-- Continuazione avanzata del gioco in modo unito.
-- Sapere come fare e con cosa fare la GUI del gioco.
-
+Entro il 2 Maggio:
+- Installare e testare “Swing” sui propri pc, pullare il progetto e testare il funzionamento del programma.
 
 ---------------------------------------------------------------------------------------------------------------------------
 
 
 POSSIBILI Giorni per incontrarci:
 
-Lunedì:	14:30 - 18:30 (variabile)
+Lunedì:		14:30 - 18:30 (variabile)
 Martedì:	14:30 - 18:30 (variabile)
 Giovedì:	15:00 - 18:30 (variabile)
-Venerdì:	17:00 - 18:30 (variabile)
 
 -> 3 volte a settimana massimo, la frequenza è in base alla progressione del lavoro.
 -> Ovviamente l’orario può variare in base agli impegni e alle lezioni.
