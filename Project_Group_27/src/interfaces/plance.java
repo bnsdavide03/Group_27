@@ -53,8 +53,10 @@ public class plance extends JFrame {
 		
 		//contentPane.setLayout(new FlowLayout());
 		contentPane.setSize(1800, 1000);
-        
-		 	BufferedImage bufferedImage = ImageIO.read(new File("C:/Users/Luca/Desktop/Group_27/Project_Group_27/img/17_MyShelfie_BGA/boards/livingroom.png"));
+		int widt= contentPane.getWidth()/100*50;
+		int Height= contentPane.getHeight()/100*50;
+		
+		 	BufferedImage bufferedImage = ImageIO.read(new File("./img/17_MyShelfie_BGA/boards/livingroom.png"));
 	        Image image = bufferedImage.getScaledInstance(1000, 750, Image.SCALE_DEFAULT);
 	        ImageIcon icon = new ImageIcon(image);
 
@@ -64,7 +66,7 @@ public class plance extends JFrame {
 	        contentPane.add(jLabel);
 	        
 	        
-	        BufferedImage bufferedImage1 = ImageIO.read(new File("C:/Users/Luca/Desktop/Group_27/Project_Group_27/img/17_MyShelfie_BGA/boards/bookshelf.png"));
+	        BufferedImage bufferedImage1 = ImageIO.read(new File("./img/17_MyShelfie_BGA/boards/bookshelf.png"));
 	        Image imglibreria1 = bufferedImage1.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
 	        ImageIcon l1 = new ImageIcon(imglibreria1);
 	        JLabel Libreria1 = new JLabel();
@@ -72,7 +74,7 @@ public class plance extends JFrame {
 	        Libreria1.setIcon(l1);
 	        contentPane.add(Libreria1);
 	        
-	        BufferedImage bufferedImage2 = ImageIO.read(new File("C:/Users/Luca/Desktop/Group_27/Project_Group_27/img/17_MyShelfie_BGA/boards/bookshelf.png"));
+	        BufferedImage bufferedImage2 = ImageIO.read(new File("./img/17_MyShelfie_BGA/boards/bookshelf.png"));
 	        Image imglibreria2 = bufferedImage2.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
 	        ImageIcon l2 = new ImageIcon(imglibreria2);
 	        JLabel Libreria2 = new JLabel();
@@ -80,7 +82,7 @@ public class plance extends JFrame {
 	        Libreria2.setIcon(l2);
 	        contentPane.add(Libreria2);
 	        
-	        BufferedImage bufferedImage3 = ImageIO.read(new File("C:/Users/Luca/Desktop/Group_27/Project_Group_27/img/17_MyShelfie_BGA/boards/bookshelf.png"));
+	        BufferedImage bufferedImage3 = ImageIO.read(new File("./img/17_MyShelfie_BGA/boards/bookshelf.png"));
 	        Image imglibreria3 = bufferedImage3.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
 	        ImageIcon l3 = new ImageIcon(imglibreria3);
 	        JLabel Libreria3 = new JLabel();
