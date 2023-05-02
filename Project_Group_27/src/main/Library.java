@@ -13,8 +13,11 @@ public class Library {
 			}
 		}
 	}
-	Tile[][] getLibrary()
+	public Tile[][] getLibrary()
 	{
 		return this.library;
+	}
+	public void setLibrary(Tile[][] library) {
+		this.library = library;
 	}
 }

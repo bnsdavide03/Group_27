@@ -16,12 +16,12 @@ public class Personal_Card01 extends Personal_Card {
 		this.card[4][4]=Color.GREEN;
 		this.card[0][5]=Color.PINK;
 		this.card[2][5]=Color.BLUE;*/
-		posizione.add(new Tile(new Position(2,0),Color.LIGHT_BLUE));
-		posizione.add(new Tile(new Position(1,2),Color.YELLOW));
-		posizione.add(new Tile(new Position(3,3),Color.WHITE));
-		posizione.add(new Tile(new Position(4,4),Color.GREEN));
-		posizione.add(new Tile(new Position(0,5),Color.PINK));
-		posizione.add(new Tile(new Position(2,5),Color.BLUE));
+		position.add(new Tile(new Position(2,0),Color.LIGHT_BLUE));
+		position.add(new Tile(new Position(1,2),Color.YELLOW));
+		position.add(new Tile(new Position(3,3),Color.WHITE));
+		position.add(new Tile(new Position(4,4),Color.GREEN));
+		position.add(new Tile(new Position(0,5),Color.PINK));
+		position.add(new Tile(new Position(2,5),Color.BLUE));
 	}
 
 
