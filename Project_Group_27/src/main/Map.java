@@ -72,7 +72,7 @@ public class Map {
 				map[8][5] = new Tile();
 			}
 		}
-		fillMap();// use function fillMap() to fill the map
+		 fillMap(); //use function fillMap() to fill the map
 	}
 
 	void fillMap() {
@@ -148,8 +148,23 @@ public class Map {
 
 	}
 
-	void verifyMap() {
-
+	int verifyMap() {
+		for (int i = 0; i < 8; i++) {
+			for (int k = 0; k < 8; k++) {
+				if(this.map[i][k]!=null) {
+					if(this.map[i][k].getP().getX()!=-1) {
+						if(this.map[i+1][k]!=null && this.map[i+1][k].getP().getX()!=-1 ) {     // for each tile of the map check if the right one or the bottom one is not empty
+							return 0;
+						}
+						if(this.map[i][k+1]!=null && this.map[i][k+1].getP().getX()!=-1 ) {
+							return 0;
+						}
+					}
+				}
+			}
+		}
+		fillMap();  // if we can't take more than one tile fill the map
+        return 1;
 	}
 
 	Tile[][] getMap() {
