@@ -18,15 +18,15 @@ Come scritto precedentemente, il nostro compito, nonchè obiettivo, è realizzar
 
 Nella scatola troviamo:
 
-4 Librerie (Strutture in 3D)
-1 Plancia Soggiorno
-132 Tessere Oggetto (22 per ciascuno dei 6 tipi)
-12 Carte Obiettivo Comune
-12 Carte Obiettivo Personale
-1 Sacchetto
-1 Segnalino Poltrona (1° giocatore)
-1 Tessera Fine partita
-8 Tessere Punteggio
+- 4 Librerie (Strutture in 3D)
+- 1 Plancia Soggiorno
+- 132 Tessere Oggetto (22 per ciascuno dei 6 tipi)
+- 12 Carte Obiettivo Comune
+- 12 Carte Obiettivo Personale
+- 1 Sacchetto
+- 1 Segnalino Poltrona (1° giocatore)
+- 1 Tessera Fine partita
+- 8 Tessere Punteggio
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
