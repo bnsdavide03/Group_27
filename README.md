@@ -30,25 +30,6 @@ Nella scatola troviamo:
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--> PREPARAZIONE
-
-1) Piazzate la plancia Soggiorno al centro del tavolo. 
-2) Piazzate la tessera Fine Partita nel suo spazio sulla plancia.
-3) Piazzate tutte le tessere Oggetto nel sacchetto.
-4) Mescolate le carte Obiettivo Comune; dopodiché pescatene 2 e piazzatele accanto alla plancia Soggiorno (rimettete le carte inutilizzate nella scatola). Per la vostra prima partita, usate solo 1 carta Obiettivo Comune.
-5) Dividete le tessere Punteggio in base al numero romano sul retro e formate una pila su ciascuna carta Obiettivo Comune in ordine crescente dal basso verso l’alto. In base al numero di giocatori utilizzate le seguenti tessere: 
-
-2 Giocatori --> 4-8
-3 Giocatori --> 4-6-8
-4 Giocatori --> 2-4-6-8
-
-6) Ogni giocatore prende una Libreria e la posiziona di fronte a sé. Assemblate i tre pezzi assicurandovi che il pezzo centrale abbia il lato più spesso sul fondo.
-7) Mescolate le carte Obiettivo Personale; dopodiché datene 1 a ciascun giocatore da tenere segreta davanti a sé (rimettete le carte inutilizzate nella scatola).
-8) Scegliete casualmente il primo giocatore e dategli la Sedia 1° giocatore (ricordatevi di assemblarla prima della prima partita).
-9) Pescate le tessere Oggetto dal sacchetto e piazzatele casualmente sulla Plancia Soggiorno. In una partita a 3 giocatori, non piazzate tessere sugli spazi con 4 puntini. In una partita a 2 giocatori, non piazzate tessere sugli spazi con 3 e 4 puntini.
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 ->  SCOPO DEL GIOCO
 
 I giocatori dovranno prendere le tessere Oggetto dalla plancia Soggiorno e metterle nelle loro Librerie per guadagnare punti.
