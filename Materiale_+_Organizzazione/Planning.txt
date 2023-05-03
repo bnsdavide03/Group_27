@@ -13,13 +13,14 @@ Dopo il 19 Aprile:
 - inizio delle funzioni principali, cominciando a traiardare.
 - in parallelo, inizio dell'interfaccia GUI.
 
+Entro il 2 Maggio:
+- Installare e testare “Swing” sui propri pc, pullare il progetto e testare il funzionamento del programma.
 
 ---------------------------------------------------------------------------------------------------------------------------
 
 IN AVANZAMENTO:
 
-Entro il 2 Maggio:
-- Installare e testare “Swing” sui propri pc, pullare il progetto e testare il funzionamento del programma.
+- Continuare progetto
 
 ---------------------------------------------------------------------------------------------------------------------------
 
