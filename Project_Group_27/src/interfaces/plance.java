@@ -90,7 +90,7 @@ public class plance extends JFrame {
 	        Libreria3.setIcon(l3);
 	        contentPane.add(Libreria3);
 	        
-	        BufferedImage bufferedImage4 = ImageIO.read(new File("C:/Users/Luca/Desktop/Group_27/Project_Group_27/img/17_MyShelfie_BGA/boards/bookshelf.png"));
+	        BufferedImage bufferedImage4 = ImageIO.read(new File("./img/17_MyShelfie_BGA/boards/bookshelf.png"));
 	        Image imglibreria4 = bufferedImage4.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
 	        ImageIcon l4 = new ImageIcon(imglibreria4);
 	        JLabel Libreria4 = new JLabel();
