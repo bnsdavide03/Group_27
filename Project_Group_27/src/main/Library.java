@@ -17,6 +17,10 @@ public class Library {
 	{
 		return this.library;
 	}
+	public Tile getTile(Position p)
+	{
+		return this.library[p.getX()][p.getY()];
+	}
 	public void setLibrary(Tile[][] library) {
 		this.library = library;
 	}

@@ -1,5 +1,7 @@
 package common_goal;
 
+import main.Library;
+
 public class Common_Goal01 extends Common_Goal{
 	
 	public Common_Goal01(int Numero_Giocatori) {
@@ -10,9 +12,16 @@ public class Common_Goal01 extends Common_Goal{
 	}
 
 	@Override
-	public int verify_goal() {
-		// TODO Auto-generated method stub
-		return 0;
+	public boolean verify_goal(Library libreria) {
+		// libreria 6x5
+		for(int i=0;i<7;i++)
+		{
+			for(int k=0;k<6;k++)
+			{
+				
+			}
+		}
+		return false;
 	}
 
 }

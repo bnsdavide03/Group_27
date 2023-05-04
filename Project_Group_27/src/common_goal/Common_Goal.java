@@ -1,5 +1,7 @@
 package common_goal;
 
+import main.Library;
+
 public abstract class Common_Goal {
 		
 
@@ -21,7 +23,7 @@ public abstract class Common_Goal {
 		}
 		
 	}
-	public abstract int verify_goal();
+	public abstract boolean verify_goal(Library libreria);
 	{
 		
 	}
