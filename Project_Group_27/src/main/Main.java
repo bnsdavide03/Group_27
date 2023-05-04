@@ -3,6 +3,15 @@ import common_goal.*;
 public class Main {
 
 	public static void main(String[] args) {
+		Library lib=new Library();
+		
+		/*lib.library[1][1]=new Tile(new Position(1,1),Color.BLUE);
+		lib.library[2][2]=new Tile(new Position(2,2),Color.BLUE);
+		lib.library[3][3]=new Tile(new Position(3,3),Color.BLUE);
+		lib.library[4][4]=new Tile(new Position(4,4),Color.BLUE);
+		lib.library[0][0]=new Tile(new Position(0,0),Color.BLUE);/*
+		Common_Goal07 goal = new Common_Goal07(4);
+		System.out.println(goal.verify_goal(lib));
 		/*Common_Goal03 gol = new Common_Goal03(2);
 		System.out.println(gol.getDescription());
 		gol.getRemaningCards();/*

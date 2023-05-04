@@ -13,12 +13,14 @@ public class Common_Goal07 extends Common_Goal {
 
 	@Override
 	public boolean verify_goal(Library libreria) {
+		main.Color c=null;
 		// control first diagonal
-		main.Color c = libreria.getTile(new Position(0, 0)).getColor();
-		if (libreria.getTile(new Position(1, 1)).getColor() == c) {
-			if (libreria.getTile(new Position(2, 2)).getColor() == c) {
-				if (libreria.getTile(new Position(3, 3)).getColor() == c) {
-					if (libreria.getTile(new Position(4, 4)).getColor() == c) {
+	if(libreria.getTile(new Position(0, 0))!=null) {
+	 c = libreria.getTile(new Position(0, 0)).getColor();
+		if (libreria.getTile(new Position(1, 1))!=null&&libreria.getTile(new Position(1, 1)).getColor() == c) {
+			if (libreria.getTile(new Position(2, 2))!=null&&libreria.getTile(new Position(2, 2)).getColor() == c) {
+				if (libreria.getTile(new Position(3, 3))!=null&&libreria.getTile(new Position(3, 3)).getColor() == c) {
+					if (libreria.getTile(new Position(4, 4))!=null&&libreria.getTile(new Position(4, 4)).getColor() == c) {
 						return true;
 					}
 
@@ -27,39 +29,46 @@ public class Common_Goal07 extends Common_Goal {
 			}
 
 		}
+	}
 		// control second diagonal
+	if(libreria.getTile(new Position(0, 1))!=null) {
 		c = libreria.getTile(new Position(0, 1)).getColor();
-		if (libreria.getTile(new Position(1, 2)).getColor() == c) {
-			if (libreria.getTile(new Position(2, 3)).getColor() == c) {
-				if (libreria.getTile(new Position(3, 4)).getColor() == c) {
-					if (libreria.getTile(new Position(4, 5)).getColor() == c) {
+		if (libreria.getTile(new Position(1, 2))!=null&&libreria.getTile(new Position(1, 2)).getColor() == c) {
+			if (libreria.getTile(new Position(2, 3))!=null&&libreria.getTile(new Position(2, 3)).getColor() == c) {
+				if (libreria.getTile(new Position(3, 4))!=null&&libreria.getTile(new Position(3, 4)).getColor() == c) {
+					if (libreria.getTile(new Position(4, 5))!=null&&libreria.getTile(new Position(4, 5)).getColor() == c) {
 						return true;
 					}
 				}
 			}
 		}
+	}
 		// control third diagonal
+	if(libreria.getTile(new Position(0, 4))!=null) {
 		c = libreria.getTile(new Position(0, 4)).getColor();
-		if (libreria.getTile(new Position(1, 3)).getColor() == c) {
-			if (libreria.getTile(new Position(2, 2)).getColor() == c) {
-				if (libreria.getTile(new Position(3, 1)).getColor() == c) {
-					if (libreria.getTile(new Position(4, 0)).getColor() == c) {
+		if (libreria.getTile(new Position(1, 3))!=null&&libreria.getTile(new Position(1, 3)).getColor() == c) {
+			if (libreria.getTile(new Position(2, 2))!=null&&libreria.getTile(new Position(2, 2)).getColor() == c) {
+				if (libreria.getTile(new Position(3, 1))!=null&&libreria.getTile(new Position(3, 1)).getColor() == c) {
+					if (libreria.getTile(new Position(4, 0))!=null&&libreria.getTile(new Position(4, 0)).getColor() == c) {
 						return true;
 					}
 				}
 			}
 		}
+	}
 		// control fourth diagonal
+			if(libreria.getTile(new Position(1, 4))!=null) {
 				c = libreria.getTile(new Position(1, 4)).getColor();
-				if (libreria.getTile(new Position(2, 3)).getColor() == c) {
-					if (libreria.getTile(new Position(3, 2)).getColor() == c) {
-						if (libreria.getTile(new Position(4, 1)).getColor() == c) {
-							if (libreria.getTile(new Position(5, 0)).getColor() == c) {
+				if (libreria.getTile(new Position(2, 3))!=null&&libreria.getTile(new Position(2, 3)).getColor() == c) {
+					if (libreria.getTile(new Position(3, 2))!=null&&libreria.getTile(new Position(3, 2)).getColor() == c) {
+						if (libreria.getTile(new Position(4, 1))!=null&&libreria.getTile(new Position(4, 1)).getColor() == c) {
+							if (libreria.getTile(new Position(5, 0))!=null&&libreria.getTile(new Position(5, 0)).getColor() == c) {
 								return true;
 							}
 						}
 					}
 				}
+			}
 
 
 		return false;
