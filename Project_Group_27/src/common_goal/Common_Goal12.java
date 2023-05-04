@@ -15,5 +15,16 @@ public class Common_Goal12 extends Common_Goal{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	@Override
+	public String getDescription() {
+		return this.description;
+	}
+
+	@Override
+	public void getRemaningCards() {
+		for (int i=0; i<4; i++) {
+			System.out.println(this.remaningCards[i]);
+		}
+	}
 
 }

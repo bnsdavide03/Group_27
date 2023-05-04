@@ -28,5 +28,16 @@ public class Common_Goal02 extends Common_Goal{
 		}
 		
 	}
+	@Override
+	public String getDescription() {
+		return this.description;
+	}
+
+	@Override
+	public void getRemaningCards() {
+		for (int i=0; i<4; i++) {
+			System.out.println(this.remaningCards[i]);
+		}
+	}
 
 }
