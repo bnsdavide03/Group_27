@@ -4,14 +4,14 @@ import main.Library;
 
 public class Common_Goal11 extends Common_Goal{
 	
-	public Common_Goal11(int Numero_Giocatori) {
-		super(Numero_Giocatori);
+	public Common_Goal11(int nPlayers) {
+		super(nPlayers);
 		this.description="Cinque tessere dello stesso tipo che formano una X";
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public boolean verify_goal(Library libreria) {
+	public boolean verify_goal(Library library) {
 		// TODO Auto-generated method stub
 		return false;
 	}

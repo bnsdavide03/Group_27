@@ -5,14 +5,14 @@ import main.Position;
 
 public class Common_Goal09 extends Common_Goal{
 	
-	public Common_Goal09(int Numero_Giocatori) {
-		super(Numero_Giocatori);
+	public Common_Goal09(int nPlayers) {
+		super(nPlayers);
 		this.description="due colonne formate ciascuna da 6 diversi tipi di tessere";
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public boolean verify_goal(Library libreria) {
+	public boolean verify_goal(Library library) {
 		int count=0;
 		int controllo=0;
 		for (int i=0;i<6;i++)
@@ -23,7 +23,7 @@ public class Common_Goal09 extends Common_Goal{
 				for(int j=k;j<6;j++)
 				{
 					Position p1= new Position(i,j);
-					if(libreria.getTile(p).getColor()==libreria.getTile(p1).getColor())
+					if(library.getTile(p).getColor()==library.getTile(p1).getColor())
 					{
 						controllo=-1;
 						break;

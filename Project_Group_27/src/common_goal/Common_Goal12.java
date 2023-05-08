@@ -7,20 +7,20 @@ import main.Position;
 
 public class Common_Goal12 extends Common_Goal{
 	
-	public Common_Goal12(int Numero_Giocatori) {
-		super(Numero_Giocatori);
+	public Common_Goal12(int nPlayers) {
+		super(nPlayers);
 		this.description="Cinque colonne di altezza crescente o decrescente: a partire dalla prima colonna a sinistra o a destra, ogni colonna successiva deve essere formata da una tessera in più. Le tessere possono essere di qualsiasi tipo";
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public boolean verify_goal(Library libreria) {
+	public boolean verify_goal(Library library) {
 		int[] nTilesOnColumns=new int[5];
-		nTilesOnColumns[0]=calculateNumberTilesColumn(libreria,0);
-		nTilesOnColumns[1]=calculateNumberTilesColumn(libreria,1);
-		nTilesOnColumns[2]=calculateNumberTilesColumn(libreria,2);
-		nTilesOnColumns[3]=calculateNumberTilesColumn(libreria,3);
-		nTilesOnColumns[4]=calculateNumberTilesColumn(libreria,4);
+		nTilesOnColumns[0]=calculateNumberTilesColumn(library,0);
+		nTilesOnColumns[1]=calculateNumberTilesColumn(library,1);
+		nTilesOnColumns[2]=calculateNumberTilesColumn(library,2);
+		nTilesOnColumns[3]=calculateNumberTilesColumn(library,3);
+		nTilesOnColumns[4]=calculateNumberTilesColumn(library,4);
 		if(nTilesOnColumns[0]<nTilesOnColumns[1]&&nTilesOnColumns[1]<nTilesOnColumns[2]&&nTilesOnColumns[2]<nTilesOnColumns[3]&&nTilesOnColumns[3]<nTilesOnColumns[4]) {
 			return true;
 		}
@@ -41,16 +41,18 @@ public class Common_Goal12 extends Common_Goal{
 		}
 	}
 	
-	private int calculateNumberTilesColumn(Library libreria, int column){
+	private int calculateNumberTilesColumn(Library library, int column){
 		int nTiles=0;
 		for(int i=5;i>=0;i--){
-			if(libreria.getTile(new Position(i,column))!=null) {
+			if(library.getTile(new Position(i,column))!=null) {
 				nTiles++;
 			}
 			else {
+				//System.out.println("Number tile on column "+column+": "+nTiles);
 				return nTiles;
 			}
 		}
+		//System.out.println("Number tile on column "+column+": "+nTiles);
 		return nTiles;
 	}
 

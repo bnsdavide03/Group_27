@@ -9,21 +9,21 @@ public abstract class Common_Goal {
 	protected int remaningCards[]=new int[4];
 	
 	
-	public Common_Goal(int Numero_Giocatori)
+	public Common_Goal(int nPlayers)
 	{
 		this.remaningCards[1]=4;
 		this.remaningCards[3]=8;
-		if(Numero_Giocatori>2)
+		if(nPlayers>2)
 		{
 			this.remaningCards[2]=6;
 		}
-		if(Numero_Giocatori==4)
+		if(nPlayers==4)
 		{
 			this.remaningCards[0]=2;
 		}
 		
 	}
-	public abstract boolean verify_goal(Library libreria);
+	public abstract boolean verify_goal(Library library);
 	
 	public abstract String getDescription();
 		
