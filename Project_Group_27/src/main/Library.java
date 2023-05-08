@@ -21,6 +21,11 @@ public class Library {
 	{
 		return this.library[p.getX()][p.getY()];
 	}
+	
+	public void setTile(Position p, Tile tile) {
+		library [p.getX()] [p.getY()] = tile;
+	}
+	
 	public void setLibrary(Tile[][] library) {
 		this.library = library;
 	}

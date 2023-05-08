@@ -16,6 +16,7 @@ public class Tile {
 		Position pos=new Position();
 		this.P=pos;
 	}
+	
 	public int getTile()
 	{
 		return P.getX();
@@ -29,5 +30,6 @@ public class Tile {
 	public Position getP() {
 		return P;
 	}
+	
 	
 }
