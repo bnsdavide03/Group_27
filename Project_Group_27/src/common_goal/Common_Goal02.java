@@ -23,13 +23,9 @@ public class Common_Goal02 extends Common_Goal{
 		if(library.getTile(p1).getColor()==library.getTile(p2).getColor()&&library.getTile(p2).getColor()==library.getTile(p3).getColor()&&library.getTile(p3).getColor()==library.getTile(p4).getColor())
 				{
 					return true;
-				}
-			return false;
-		
+				}	
 		}
 		return false;
-		
-		
 	}
 	@Override
 	public String getDescription() {

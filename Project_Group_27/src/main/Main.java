@@ -5,11 +5,11 @@ public class Main {
 	public static void main(String[] args) {
 		/*Library lib=new Library();
 		
-		lib.library[0][0]=new Tile(new Position(0,0),Color.BLUE);
-		lib.library[0][1]=new Tile(new Position(0,1),Color.WHITE);
-		lib.library[0][2]=new Tile(new Position(0,2),Color.WHITE);
-		lib.library[0][3]=new Tile(new Position(0,3),Color.YELLOW);
-		lib.library[0][4]=new Tile(new Position(0,4),Color.GREEN);
+		
+		lib.library[0][4]=new Tile(new Position(0,4),Color.BLUE);
+		lib.library[5][0]=new Tile(new Position(5,0),Color.BLUE);
+		lib.library[5][4]=new Tile(new Position(5,4),Color.BLUE);
+		/*lib.library[0][4]=new Tile(new Position(0,4),Color.GREEN);
 
 		
 		
@@ -37,8 +37,8 @@ public class Main {
 		lib.library[3][3]=new Tile(new Position(3,3),Color.BLUE);
 		lib.library[3][4]=new Tile(new Position(3,4),Color.BLUE);
 		lib.library[3][0]=new Tile(new Position(3,0),Color.BLUE);*/
-		/*Common_Goal10 goal = new Common_Goal10(4);
-		System.out.println(goal.verify_goal(lib));*/
+		/*Common_Goal02 goal = new Common_Goal02(4);
+		System.out.println(goal.verify_goal(lib));
 		/*lib.library[5][1]=new Tile(new Position(5,1),Color.BLUE);
 		
 		lib.library[0][2]=new Tile(new Position(0,2),Color.BLUE);
