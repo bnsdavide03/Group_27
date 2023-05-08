@@ -13,14 +13,6 @@ public class Common_Goal01 extends Common_Goal{
 
 	@Override
 	public boolean verify_goal(Library library) {
-		// library 6x5
-		for(int i=0;i<7;i++)
-		{
-			for(int k=0;k<6;k++)
-			{
-				
-			}
-		}
 		return false;
 	}
 

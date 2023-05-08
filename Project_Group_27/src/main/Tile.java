@@ -23,6 +23,7 @@ public class Tile {
 	
 	public Color getColor() {
 		return this.c;
+		
 	}
 
 	public Position getP() {

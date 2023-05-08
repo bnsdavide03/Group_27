@@ -24,8 +24,8 @@ public class Main {
 		lib.library[2][4]=new Tile(new Position(2,4),Color.BLUE);
 		
 		lib.library[1][4]=new Tile(new Position(1,4),Color.BLUE);
-		Common_Goal12 goal = new Common_Goal12(4);
-		System.out.println(goal.verify_goal(lib));*/
+		Common_Goal05 goal = new Common_Goal05(4);
+		System.out.println(goal.verify_goal(lib));
 		/*Common_Goal03 gol = new Common_Goal03(2);
 		System.out.println(gol.getDescription());
 		gol.getRemaningCards();/*

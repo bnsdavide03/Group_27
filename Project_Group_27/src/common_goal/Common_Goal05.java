@@ -5,43 +5,66 @@ import main.Library;
 import main.Position;
 import main.Tile;
 
-public class Common_Goal05 extends Common_Goal{
-	
+public class Common_Goal05 extends Common_Goal {
+
 	public Common_Goal05(int nPlayers) {
 		super(nPlayers);
-		this.description="Tre colonne formate ciscuna da 6 tessere di uno, due o tre tipi differenti. Colonne diverse possono avere combinazioni diverse di tipi di tessere";
+		this.description = "Tre colonne formate ciscuna da 6 tessere di uno, due o tre tipi differenti. Colonne diverse possono avere combinazioni diverse di tipi di tessere";
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public boolean verify_goal(Library library) {
 		// library 6x5
-		Tile t[]=new Tile[2];
-		for(int i=0;i<7;i++)
-		{
-			for(int k=0;k<6;k++)
-			{
-				Position p1=new Position(i,k);
-				if(library.getTile(p1).getColor()!=t[1].getColor()&&library.getTile(p1).getColor()!=t[2].getColor()&&library.getTile(p1).getColor()!=t[2].getColor())
-				{
-					
-					for (int j=0;j<3;j++)
-					{
-						if(t[j].getColor()==null)
-						{
-							t[j]=library.getTile(p1);
-						}
-						else if(j==2)
-						{
-							return false;
-						}
+		int count = 0;
+		for (int i = 0; i < 5; i++) {
+
+			int t[] = new int[6];
+			for (int k = 0; k < 6; k++) {
+				Position p1 = new Position(k, i);
+				if (library.getTile(p1) != null) {
+					if (library.getTile(p1).getColor() == Color.PINK) {
+						t[0]++;
 					}
-					return true;
+					if (library.getTile(p1).getColor() == Color.BLUE) {
+						t[1]++;
+					}
+					if (library.getTile(p1).getColor() == Color.LIGHT_BLUE) {
+						t[2]++;
+					}
+					if (library.getTile(p1).getColor() == Color.GREEN) {
+						t[3]++;
+					}
+					if (library.getTile(p1).getColor() == Color.YELLOW) {
+						t[4]++;
+					}
+					if (library.getTile(p1).getColor() == Color.WHITE) {
+						t[5]++;
+					}
+
+				} else {
+					break;
+				}
+
+			}
+			int count2 = 0;
+			for (int n = 0; n < 6; n++) {
+				if (t[n] == 0) {
+					count2++;
 				}
 			}
+			if (count2 >= 3) {
+				count++;
+			}
+
+			if (count >= 3) {
+				return true;
+			}
 		}
+
 		return false;
 	}
+
 	@Override
 	public String getDescription() {
 		return this.description;
@@ -49,7 +72,7 @@ public class Common_Goal05 extends Common_Goal{
 
 	@Override
 	public void getRemaningCards() {
-		for (int i=0; i<4; i++) {
+		for (int i = 0; i < 4; i++) {
 			System.out.println(this.remaningCards[i]);
 		}
 	}
