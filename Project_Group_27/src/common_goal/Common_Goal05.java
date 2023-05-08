@@ -18,7 +18,7 @@ public class Common_Goal05 extends Common_Goal {
 		// library 6x5
 		int count = 0;
 		for (int i = 0; i < 5; i++) {
-
+			boolean stop = false;
 			int t[] = new int[6];
 			for (int k = 0; k < 6; k++) {
 				Position p1 = new Position(k, i);
@@ -43,20 +43,22 @@ public class Common_Goal05 extends Common_Goal {
 					}
 
 				} else {
+					stop = true;
 					break;
 				}
 
 			}
-			int count2 = 0;
-			for (int n = 0; n < 6; n++) {
-				if (t[n] == 0) {
-					count2++;
+			if (stop != true) {
+				int count2 = 0;
+				for (int n = 0; n < 6; n++) {
+					if (t[n] == 0) {
+						count2++;
+					}
+				}
+				if (count2 >= 3) {
+					count++;
 				}
 			}
-			if (count2 >= 3) {
-				count++;
-			}
-
 			if (count >= 3) {
 				return true;
 			}

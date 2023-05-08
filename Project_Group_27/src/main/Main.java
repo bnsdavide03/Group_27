@@ -3,22 +3,30 @@ import common_goal.*;
 public class Main {
 
 	public static void main(String[] args) {
-		/*Library lib=new Library();
+		Library lib=new Library();
 		
+		/*lib.library[0][0]=new Tile(new Position(0,0),Color.BLUE);
+		lib.library[1][0]=new Tile(new Position(1,0),Color.BLUE);
+		lib.library[2][0]=new Tile(new Position(2,0),Color.BLUE);
+		lib.library[3][0]=new Tile(new Position(3,0),Color.BLUE);
+		lib.library[4][0]=new Tile(new Position(4,0),Color.BLUE);
 		lib.library[5][0]=new Tile(new Position(5,0),Color.BLUE);
+		
+		
+		lib.library[0][1]=new Tile(new Position(0,1),Color.PINK);
+		lib.library[1][1]=new Tile(new Position(1,1),Color.BLUE);
+		lib.library[2][1]=new Tile(new Position(2,1),Color.GREEN);
+		lib.library[3][1]=new Tile(new Position(3,1),Color.BLUE);
+		lib.library[4][1]=new Tile(new Position(4,1),Color.PINK);
 		lib.library[5][1]=new Tile(new Position(5,1),Color.BLUE);
-		lib.library[5][2]=new Tile(new Position(5,2),Color.BLUE);
-		lib.library[5][3]=new Tile(new Position(5,3),Color.BLUE);
-		lib.library[5][4]=new Tile(new Position(5,4),Color.BLUE);
 		
-		lib.library[4][1]=new Tile(new Position(4,1),Color.BLUE);
-		lib.library[4][2]=new Tile(new Position(4,2),Color.BLUE);
-		lib.library[4][3]=new Tile(new Position(4,3),Color.BLUE);
-		lib.library[4][4]=new Tile(new Position(4,4),Color.BLUE);
-		
+		lib.library[0][2]=new Tile(new Position(0,2),Color.BLUE);
+		lib.library[1][2]=new Tile(new Position(1,2),Color.BLUE);
+		lib.library[2][2]=new Tile(new Position(2,2),Color.BLUE);
 		lib.library[3][2]=new Tile(new Position(3,2),Color.BLUE);
-		lib.library[3][3]=new Tile(new Position(3,3),Color.BLUE);
-		lib.library[3][4]=new Tile(new Position(3,4),Color.BLUE);
+		lib.library[4][2]=new Tile(new Position(4,2),Color.BLUE);
+		lib.library[5][2]=new Tile(new Position(5,2),Color.BLUE);
+		 
 		
 		lib.library[2][3]=new Tile(new Position(2,3),Color.BLUE);
 		lib.library[2][4]=new Tile(new Position(2,4),Color.BLUE);
