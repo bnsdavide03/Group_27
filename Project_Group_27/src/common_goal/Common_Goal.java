@@ -30,6 +30,7 @@ public abstract class Common_Goal {
 					library.setTile(t1, null);
 					library.setTile(new Position(t1.getX() + 1, t1.getY()), null);
 					remove_adjacency(library, new Position(t1.getX() + 1, t1.getY()), c);
+					library.visualLibrary();
 				}
 			}
 		}
@@ -40,6 +41,7 @@ public abstract class Common_Goal {
 					library.setTile(new Position(t1.getX(), t1.getY() + 1), null);
 
 					remove_adjacency(library, new Position(t1.getX(), t1.getY() + 1), c);
+					library.visualLibrary();
 				}
 			}
 		}
@@ -51,6 +53,7 @@ public abstract class Common_Goal {
 					library.setTile(new Position(t1.getX(), t1.getY() -1 ), null);
 
 					remove_adjacency(library, new Position(t1.getX(), t1.getY() -1), c);
+					library.visualLibrary();
 				}
 			}
 		}

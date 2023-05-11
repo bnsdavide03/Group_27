@@ -22,21 +22,21 @@ public class Common_Goal01 extends Common_Goal {
 		int count = 0;
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 5; j++) {
-				System.out.println("riga: " + i + " colonna: " + j + " posizione");
+				//System.out.println("riga: " + i + " colonna: " + j + " posizione");
 				Tile t1 = virtualLibrary.getTile(new Position(i, j));
 				if (t1 != null) {
 
-					System.out.println(t1.getColor() + "questo è il colore");
+					//System.out.println(t1.getColor() + "questo è il colore");
 					if (i < 5||j<4) {
 						if(i<5)
 						{
 							if (virtualLibrary.getTile(new Position(i + 1, j)) != null) {
 								if (t1.getColor() == virtualLibrary.getTile(new Position(i + 1, j)).getColor()) {
 									count++;
-									System.out.println("Count: "+count);
+								//	System.out.println("Count: "+count);
 									remove_adjacency(virtualLibrary, new Position(i, j),
 											virtualLibrary.getTile(new Position(i, j)).getColor());
-									virtualLibrary.visualLibrary();
+								//	virtualLibrary.visualLibrary();
 								}
 							}
 						}
@@ -45,38 +45,14 @@ public class Common_Goal01 extends Common_Goal {
 							if (virtualLibrary.getTile(new Position(i, j + 1)) != null) {
 								if (t1.getColor() == virtualLibrary.getTile(new Position(i, j + 1)).getColor()) {
 									count++;
-									System.out.println("Count: "+count);
+									//System.out.println("Count: "+count);
 									remove_adjacency(virtualLibrary, new Position(i, j), t1.getColor());
-									virtualLibrary.visualLibrary();
+									//virtualLibrary.visualLibrary();
 								}
 							}
 						}
 					}
 
-					/*else {
-						remove_adjacency(virtualLibrary, new Position(i, j),
-								virtualLibrary.getTile(new Position(i, j)).getColor());
-						virtualLibrary.visualLibrary();
-					}
-
-					if (j < 4) {
-						
-					} else {
-						remove_adjacency(virtualLibrary, new Position(i, j),
-								virtualLibrary.getTile(new Position(i, j)).getColor());
-						virtualLibrary.visualLibrary();
-					}
-*/
-					/*
-					 * if (virtualLibrary.getTile(new Position (i,j-1)) != null) { if
-					 * (virtualLibrary.getTile(new Position (i,j-1)).getColor() ==
-					 * virtualLibrary.getTile(new Position (i,j-1)).getColor()) {
-					 * 
-					 * count ++;
-					 * 
-					 * remove_adjacency(virtualLibrary,new Position (i,j),virtualLibrary.getTile(new
-					 * Position (i,j)).getColor() ); virtualLibrary.visualLibrary(); } }
-					 */
 				}
 			}
 		}
