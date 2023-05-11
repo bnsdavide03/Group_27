@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		int[] arrayPersonalCardAvailable=new int[12];
+		/*int[] arrayPersonalCardAvailable=new int[12];
 		for(int i=0;i<12;i++) {arrayPersonalCardAvailable[i]=i+1;}
 		int nPlayers;
 		Scanner sc=new Scanner(System.in);
@@ -37,8 +37,8 @@ public class Main {
 		
 		for(int i=0;i<nPlayers;i++) {
 			players[i].ToString();
-		}
-	/*	Library lib=new Library();
+		}*/
+		Library lib=new Library();
 		lib.setTile(new Position(0,0), new Tile(new Position (0,0), Color.PINK));
 		lib.setTile(new Position(1,0), new Tile(new Position (1,0), Color.PINK));
 		lib.setTile(new Position(2,0), new Tile(new Position (2,0), Color.PINK));
