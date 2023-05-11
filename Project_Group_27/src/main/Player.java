@@ -147,6 +147,7 @@ public class Player {
 				}
 			}while(!control);
 		}
+		
 		for(int i=0;i<choice;i++) {
 			tiles[i]=map.takeTile(x[i],y[i]);
 		}

@@ -168,6 +168,7 @@ public class Map {
 	}
 
 	Tile[][] getMap() {
+		
 		return this.map;
 	}
 
