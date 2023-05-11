@@ -35,10 +35,12 @@ public class Main {
 			
 		}
 		
+		
+		
 		for(int i=0;i<nPlayers;i++) {
 			players[i].ToString();
 		}*/
-		Library lib=new Library();
+		/*Library lib=new Library();
 		lib.setTile(new Position(0,0), new Tile(new Position (0,0), Color.YELLOW));
 		lib.setTile(new Position(1,0), new Tile(new Position (1,0), Color.YELLOW));
 		lib.setTile(new Position(2,0), new Tile(new Position (2,0), Color.LIGHT_BLUE));
@@ -71,12 +73,20 @@ public class Main {
 		lib.setTile(new Position(5,4), new Tile(new Position (5,4), Color.WHITE));
 		lib.visualLibrary();
 		Common_Goal goal = new Common_Goal03(4);
-		System.out.println(goal.verify_goal(lib));
+		System.out.println(goal.verify_goal(lib));*/
 		
 		/*Tile t= new Tile();
 		System.out.println(t.getP());
 		System.out.println(t.getColor());*/
+		Map m=new Map(4);
+		System.out.println(m.verifyMap());
+		m.takeTile(1, 4);
+		m.visualmap();
+		
+		
 		/*Library lib=new Library();
+		
+		 
 		
 		
 >>>>>>> branch 'main' of https://github.com/bnsdavide03/Group_27.git
@@ -84,7 +94,7 @@ public class Main {
 		/*Common_Goal03 gol = new Common_Goal03(2);
 		System.out.println(gol.getDescription());
 		gol.getRemaningCards();/*
-		/*Map m=new Map(4);
+		Map m=new Map(4);
 		m.map[5][5]=  new Tile(new Position(5, 5), Color.BLUE);
 		m.map[5][6]=  new Tile(new Position(5, 6), Color.BLUE);
 		System.out.println(m.verifyMap());

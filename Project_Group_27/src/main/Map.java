@@ -175,7 +175,24 @@ public class Map {
 	public void visualmap() {
 		for (int i = 0; i < 9; i++) {
 			for (int k = 0; k < 9; k++) {
-				System.out.print(map[i][k].getColor() + " ");
+				if(map[i][k]!=null)
+				{
+					if(map[i][k].getP().getX()!=-1)
+					{
+						System.out.print(map[i][k].getColor() + " ");
+					}
+					else
+					{
+						System.out.print("■");
+					}
+
+				}
+				else
+				{
+					System.out.print("null");
+				}
+				
+			
 			}
 			System.out.println();
 		}
