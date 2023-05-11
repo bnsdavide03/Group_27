@@ -3,8 +3,8 @@ package main;
 public class Tile {
 	
 
-	Position P;
-	Color c;
+	private Position P;
+	private Color c;
 	
 	public Tile(Position P,Color c) 
 	{

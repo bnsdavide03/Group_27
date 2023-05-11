@@ -6,7 +6,7 @@ public class Main {
 		
 		Library lib=new Library();
 		lib.setTile(new Position(0,0), new Tile(new Position (0,0), Color.PINK));
-		lib.setTile(new Position(1,0), new Tile(new Position (1,0), Color.GREEN));
+		lib.setTile(new Position(1,0), new Tile(new Position (1,0), Color.PINK));
 		lib.setTile(new Position(2,0), new Tile(new Position (2,0), Color.PINK));
 		lib.setTile(new Position(3,0), new Tile(new Position (3,0), Color.WHITE));
 		lib.setTile(new Position(4,0), new Tile(new Position (4,0), Color.YELLOW));
@@ -23,20 +23,25 @@ public class Main {
 		lib.setTile(new Position(3,2), new Tile(new Position (3,2), Color.PINK));
 		lib.setTile(new Position(4,2), new Tile(new Position (4,2), Color.YELLOW));
 		lib.setTile(new Position(5,2), new Tile(new Position (5,2), Color.LIGHT_BLUE));
-		lib.setTile(new Position(0,3), new Tile(new Position (0,3), Color.PINK));
-		lib.setTile(new Position(1,3), new Tile(new Position (1,3), Color.PINK));
+		lib.setTile(new Position(0,3), new Tile(new Position (0,3), Color.WHITE));
+		lib.setTile(new Position(1,3), new Tile(new Position (1,3), Color.WHITE));
 		lib.setTile(new Position(2,3), new Tile(new Position (2,3), Color.PINK));
 		lib.setTile(new Position(3,3), new Tile(new Position (3,3), Color.PINK));
-		lib.setTile(new Position(4,3), new Tile(new Position (4,3), Color.PINK));
-		lib.setTile(new Position(5,3), new Tile(new Position (5,3), Color.PINK));
-		lib.setTile(new Position(0,4), new Tile(new Position (0,4), Color.PINK));
-		lib.setTile(new Position(1,4), new Tile(new Position (1,4), Color.PINK));
+		lib.setTile(new Position(4,3), new Tile(new Position (4,3), Color.LIGHT_BLUE));
+		lib.setTile(new Position(5,3), new Tile(new Position (5,3), Color.LIGHT_BLUE));
+		lib.setTile(new Position(0,4), new Tile(new Position (0,4), Color.YELLOW));
+		lib.setTile(new Position(1,4), new Tile(new Position (1,4), Color.YELLOW));
 		lib.setTile(new Position(2,4), new Tile(new Position (2,4), Color.PINK));
 		lib.setTile(new Position(3,4), new Tile(new Position (3,4), Color.PINK));
 		lib.setTile(new Position(4,4), new Tile(new Position (4,4), Color.PINK));
 		lib.setTile(new Position(5,4), new Tile(new Position (5,4), Color.PINK));
-		Common_Goal11 goal = new Common_Goal11(4);
+		lib.visualLibrary();
+		Common_Goal goal = new Common_Goal01(4);
 		System.out.println(goal.verify_goal(lib));
+		
+		/*Tile t= new Tile();
+		System.out.println(t.getP());
+		System.out.println(t.getColor());*/
 		/*Library lib=new Library();
 		
 		
