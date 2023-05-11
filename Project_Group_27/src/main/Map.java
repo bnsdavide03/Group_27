@@ -72,7 +72,7 @@ public class Map {
 				map[8][5] = new Tile();
 			}
 		}
-		 fillMap(); //use function fillMap() to fill the map
+		fillMap(); //use function fillMap() to fill the map
 	}
 
 	void fillMap() {
@@ -164,7 +164,7 @@ public class Map {
 			}
 		}
 		fillMap();  // if we can't take more than one tile fill the map
-        return 1;
+		return 1;
 	}
 
 	Tile[][] getMap() {
@@ -179,4 +179,24 @@ public class Map {
 			System.out.println();
 		}
 	}
+	public boolean verifyTile(int x, int y) {
+		if(this.map[x][y]==null || this.map[x][y].getTile()==-1) {
+			System.out.println("Invalid selection: no tile found.");
+			return false;
+		}
+		if((x==0 && y==3) || (x==0 && y==4) || (x==5 && y==0) || (x==4 && y==0) || (x==3 && y==8) || (x==4 && y==8) || (x== 8 && y==5) || (x==8 && y==4)) {
+			return true;
+		}
+		if(this.map[x+1][y]==null || this.map[x-1][y]==null || this.map[x][y+1]==null || this.map[x][y-1]==null || this.map[x+1][y].getTile() == -1 || this.map[x-1][y].getTile() == -1|| this.map[x][y+1].getTile() == -1|| this.map[x][y-1].getTile() == -1 ) {
+			return true;
+		}
+		System.out.println("Invalid tile");
+		return false;
+	}
+	public Tile takeTile(int x, int y) {
+		Tile tile= this.map[x][y];
+		this.map[x][y]= null;
+		return tile;
+	}
+
 }
