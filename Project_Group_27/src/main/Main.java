@@ -6,40 +6,72 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		/*int[] arrayPersonalCardAvailable=new int[12];
+		int[] arrayPersonalCardAvailable=new int[12];
 		for(int i=0;i<12;i++) {arrayPersonalCardAvailable[i]=i+1;}
 		int nPlayers;
+		
 		Scanner sc=new Scanner(System.in);
 		do {
-			System.out.println("Inserisci il numero di giocatori: ");
-			nPlayers=sc.nextInt();
-			if(nPlayers>4||nPlayers<=0) {
-				System.out.println("Numero non valido, inserisci un numero da 2 a 4\n");
+			System.out.println("Number of players: ");
+			try {
+				nPlayers=Integer.parseInt(sc.next());
+			}
+			catch(Exception e){
+				nPlayers=-1;
+			}
+			
+			if(nPlayers>4||nPlayers<=1) {
+				System.out.println("Number not valid! Insert a number between 2 and 4\n");
 			}
 		}while(nPlayers>4||nPlayers<=1);
 		
-		Player[] players=new Player[nPlayers];
+		Player[] players=new Player[nPlayers]; //players's array
 		SecureRandom rand = new SecureRandom();
 		int upperbound = nPlayers;
-		int r = rand.nextInt(upperbound + 1);
+		int idInitialPlayer = rand.nextInt(upperbound);
 		//random to choose who has the chair
 		for(int i=0;i<nPlayers;i++) {			//create players into the array of players
 			System.out.println(i+1+" Player: ");
-			System.out.println("Nome: ");
+			System.out.println("Name: ");
 			String name=sc.next();
 			boolean chair=false;
-			if(r==i) {
+			if(idInitialPlayer==i) {
 				chair=true;
 			}
 			players[i]=new Player(name , i+1, chair, arrayPersonalCardAvailable);
 			
 		}
 		
-		
+		System.out.println("Players: ");
 		
 		for(int i=0;i<nPlayers;i++) {
+			System.out.println("-------------------------------------");
 			players[i].ToString();
-		}*/
+		}
+		System.out.println("-------------------------------------");
+		Map m=new Map(nPlayers);
+		System.out.println("Press Any Key To Continue...");
+        new java.util.Scanner(System.in).nextLine();
+        
+		//start loop of shifts
+		boolean game=true;
+		int i=idInitialPlayer;
+		while(game==true)
+		{	
+			for (int j = 0; j < 100; ++j) System.out.println();
+			
+			System.out.println("It is player "+(i+1)+"'s turn");
+			System.out.println("-------------------------------------");
+			System.out.println("Map:");
+			m.visualmap();
+			System.out.println("-------------------------------------");
+			players[i].library.visualLibrary();
+			System.out.println("PersonalGoal:");
+			System.out.println("-------------------------------------");
+			i++;
+			i=i%nPlayers;
+			game=false;
+		}
 		/*Library lib=new Library();
 		lib.setTile(new Position(0,0), new Tile(new Position (0,0), Color.YELLOW));
 		lib.setTile(new Position(1,0), new Tile(new Position (1,0), Color.YELLOW));
@@ -78,10 +110,11 @@ public class Main {
 		/*Tile t= new Tile();
 		System.out.println(t.getP());
 		System.out.println(t.getColor());*/
-		Map m=new Map(4);
-		System.out.println(m.verifyMap());
-		m.takeTile(1, 4);
+		/*Map m=new Map(nPlayers);
 		m.visualmap();
+		System.out.println(m.verifyMap());
+		m.takeTile(1, 4);*/
+		
 		
 		
 		/*Library lib=new Library();
@@ -106,5 +139,4 @@ public class Main {
 		Player player1=new Player("Davide");
 		System.out.println(player1.verifyPersonalCard());*/
 	}
-	
 }
