@@ -10,12 +10,12 @@ public class Personal_Card08 extends Personal_Card {
 	
 	public Personal_Card08()
 	{
-		position.add(new Tile(new Position(2,3),Color.LIGHT_BLUE));
-		position.add(new Tile(new Position(3,0),Color.YELLOW));
-		position.add(new Tile(new Position(3,1),Color.WHITE));
-		position.add(new Tile(new Position(1,4),Color.GREEN));
-		position.add(new Tile(new Position(0,2),Color.PINK));
-		position.add(new Tile(new Position(4,5),Color.BLUE));
+		position.add(new Tile(new Position(3,2),Color.LIGHT_BLUE));
+		position.add(new Tile(new Position(0,3),Color.YELLOW));
+		position.add(new Tile(new Position(1,3),Color.WHITE));
+		position.add(new Tile(new Position(4,1),Color.GREEN));
+		position.add(new Tile(new Position(2,0),Color.PINK));
+		position.add(new Tile(new Position(5,4),Color.BLUE));
 	}
 
 
