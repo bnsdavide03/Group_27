@@ -2,6 +2,7 @@ package personal_card;
 
 import java.util.ArrayList;
 
+import main.Library;
 import main.Tile;
 
 public abstract class Personal_Card {
@@ -12,5 +13,17 @@ public abstract class Personal_Card {
 	{
 		return this.position;
 	}
+	
+	public void Visual_Personal_Card()
+	{
+		Library library=new Library();
+		for(int i=0;i<position.size();i++)
+		{
+			library.setTile(position.get(i).getP(), position.get(i));
+		}
+		library.visualLibrary();
+	}
+	
+	
 
 }
