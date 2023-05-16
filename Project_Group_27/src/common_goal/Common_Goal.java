@@ -64,8 +64,20 @@ public abstract class Common_Goal {
 
 	public abstract boolean verify_goal(Library library);
 
-	public abstract String getDescription();
+	public String getDescription() {
+		return this.description;
+	}
 
-	public abstract void getRemaningCards();
+
+	public int givePoints() {
+		for (int i=0; i<4; i++) {
+			if(this.remaningCards[3-i]!=0) {
+				int n= this.remaningCards[3-i];
+				this.remaningCards[3-i]=0;
+				return n;
+			}
+		}
+		return 0;
+	}
 
 }

@@ -29,17 +29,6 @@ public class Common_Goal12 extends Common_Goal{
 		}
 		return false;
 	}
-	@Override
-	public String getDescription() {
-		return this.description;
-	}
-
-	@Override
-	public void getRemaningCards() {
-		for (int i=0; i<4; i++) {
-			System.out.println(this.remaningCards[i]);
-		}
-	}
 	
 	private int calculateNumberTilesColumn(Library library, int column){
 		int nTiles=0;

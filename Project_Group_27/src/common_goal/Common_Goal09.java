@@ -48,17 +48,4 @@ public class Common_Goal09 extends Common_Goal {
 		}
 		return false;
 	}
-
-	@Override
-	public String getDescription() {
-		return this.description;
-	}
-
-	@Override
-	public void getRemaningCards() {
-		for (int i = 0; i < 4; i++) {
-			System.out.println(this.remaningCards[i]);
-		}
-	}
-
 }
