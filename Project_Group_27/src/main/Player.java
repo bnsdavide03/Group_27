@@ -136,11 +136,11 @@ public class Player {
 					return false;
 				}
 
-				if( !map.verifyTile(x[0], y[0])) {
+				if( map.verifyTile(x[0], y[0])==false) {
 					return false;
 				}
 				if(i>0) {
-					if(!(x[i]-1==x[i-1] || x[i]+1==x[i-1] || y[i]-1==y[i-1] || y[i]-1==y[i-1])) {
+					if((x[i]-1==x[i-1] || x[i]+1==x[i-1] || y[i]-1==y[i-1] || y[i]-1==y[i-1])==false) {
 						
 						System.out.println("The tile is not adjacent to the previous one"); 
 						return false;
