@@ -33,7 +33,7 @@ public class Player {
 			found=true;
 			r = rand.nextInt(upperbound);
 			r++;
-			System.out.println("r trovato= "+r);
+			//System.out.println("r trovato= "+r);
 			if(arrayPersonalCardAvailable[r-1]==r){
 				found=false;
 				arrayPersonalCardAvailable[r-1]=-1;
@@ -96,6 +96,7 @@ public class Player {
 	
 	void ToString()
 	{
+		System.out.println("Id: "+this.id);
 		System.out.println("Name: "+this.name);
 		System.out.println("Chair: "+this.chair);
 		System.out.println("Points: "+this.points);

@@ -77,7 +77,7 @@ public class Map {
 
 	void fillMap() {
 		Random rand = new Random();
-		int upperbound = 5;
+		int upperbound = 6;
 
 		for (int i = 0; i < 9; i++) {
 			for (int k = 0; k < 9; k++) {
@@ -128,7 +128,7 @@ public class Map {
 							} else if (int_random == 5) {
 								if (green != 0) {
 									green = -1;
-									map[i][k] = new Tile(new Position(i, k), Color.LIGHT_BLUE);
+									map[i][k] = new Tile(new Position(i, k), Color.GREEN);
 								} else {
 									contro = true;
 								}
@@ -179,17 +179,17 @@ public class Map {
 				{
 					if(map[i][k].getP().getX()!=-1)
 					{
-						System.out.print(map[i][k].getColor() + " ");
+						System.out.print(map[i][k].getColor() + "\t");
 					}
 					else
 					{
-						System.out.print("■");
+						System.out.print("---\t");
 					}
 
 				}
 				else
 				{
-					System.out.print("null");
+					System.out.print("null\t");
 				}
 				
 			
