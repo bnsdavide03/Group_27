@@ -108,50 +108,54 @@ public class Player {
 	 * 
 	 * }
 	 */
-	public void chooseTile(Map map,int nPlayers) {
+	public boolean chooseTile(Map map,int nPlayers) {
 		int choice;
-		boolean control=true;
+		
 		Scanner sc= new Scanner(System.in);
 		System.out.println("How many tiles do you want to take? Enter a number from 1 to 3");
 		choice=sc.nextInt();
 		Tile tiles[]= new Tile[choice];
 		int x[]= new int[choice];
 		int y[]= new int[choice];
+		
 		for(int i=0;i<choice;i++) {
-			do {
-				System.out.println("Enter x coordinate: ");
+	
+			System.out.println("Enter coordinates of tail: "+(i+1));
+				System.out.println("\tEnter x coordinate: ");
 				x[i]=sc.nextInt();
-				System.out.println("Enter y coordinate: ");
+				System.out.println("\tEnter y coordinate: ");
 				y[i]=sc.nextInt();
 				if(nPlayers<4 && (x[i]==4 && y[i]==0)|| (x[i]==3 && y[i]==1)||(x[i]==0 && y[i]==4)||(x[i]==1 && y[i]==5)||(x[i]==4 && y[i]==8)||(x[i]==5 && y[i]==7)||(x[i]==8 && y[i]==4)||(x[i]==7 && y[i]==3)) {
 					//check if the player has chosen tiles that are only there with 4 players
 					System.out.println("Invalid selection: no tile found.");
-					control=false;
+					return false;
 				}
 				if(nPlayers==2 && (x[i]==5 && y[i]==0)|| (x[i]==2 && y[i]==2)||(x[i]==0 && y[i]==3)||(x[i]==2 && y[i]==6)||(x[i]==3 && y[i]==8)||(x[i]==6 && y[i]==6)||(x[i]==8 && y[i]==5)||(x[i]==6 && y[i]==2)) {
 					//check if the player has chosen tiles that are only there with 3 players
 					System.out.println("Invalid selection: no tile found.");
-					control=false;
+					return false;
 				}
 
-				if(control  && map.verifyTile(x[0], y[0])==false) {
-					control=false;
+				if( map.verifyTile(x[0], y[0])==false) {
+					return false;
 				}
 				if(i>0) {
-					if(control && (x[i]-1==x[i-1] || x[i]+1==x[i-1] || y[i]-1==y[i-1] || y[i]-1==y[i-1])==false) {
-						control=false;
+					if((x[i]-1==x[i-1] || x[i]+1==x[i-1] || y[i]-1==y[i-1] || y[i]-1==y[i-1])==false) {
+						
 						System.out.println("The tile is not adjacent to the previous one"); 
+						return false;
 					}
-					if(control) {
-						control=map.verifyTile(x[i], y[i]);
+					if(!map.verifyTile(x[i], y[i])) {
+						return false;
 					}
 				}
-			}while(!control);
+			
 		}
 		
 		for(int i=0;i<choice;i++) {
 			tiles[i]=map.takeTile(x[i],y[i]);
 		}
+		return true;
 	}
 
 	public int verifyPersonalCard() {

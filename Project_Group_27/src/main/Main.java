@@ -78,9 +78,23 @@ public class Main {
 			System.out.println("PersonalGoal:");
 			players[i].getPersonalCard().Visual_Personal_Card();
 			System.out.println("-------------------------------------");
+			System.out.println("Common_Goal 1:");
+			System.out.println(common_goals[0].getClass().getSimpleName() + " " + common_goals[0].getDescription());
+			System.out.println("Common_Goal 2:");
+			System.out.println(common_goals[1].getClass().getSimpleName() + " " + common_goals[1].getDescription());
+			System.out.println("-------------------------------------");
+			boolean k;
+			do
+			{
+				 k=players[i].chooseTile(m, nPlayers);
+			}while(!k);
+			
+			
+			
 			i++;
 			i = i % nPlayers;
-			game = false;
+			System.out.println("Press Any Key To Continue...");
+			new java.util.Scanner(System.in).nextLine();
 		}
 		/*
 		 * Library lib=new Library(); lib.setTile(new Position(0,0), new Tile(new
