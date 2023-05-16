@@ -185,4 +185,8 @@ public class Player {
 		return points;
 	}
 
+	public Personal_Card getPersonalCard() {
+		return personalCard;
+	}
+
 }
