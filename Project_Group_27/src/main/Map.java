@@ -197,6 +197,12 @@ public class Map {
 			System.out.println();
 		}
 	}
+	
+	public Tile getTile(Position p)
+	{
+		return this.map[p.getX()][p.getY()];
+	}
+	
 	public boolean verifyTile(int x, int y) {
 		if(this.map[x][y]==null || this.map[x][y].getTile()==-1) {
 			System.out.println("Invalid selection: no tile found.");

@@ -83,11 +83,11 @@ public class Main {
 			System.out.println("Common_Goal 2:");
 			System.out.println(common_goals[1].getClass().getSimpleName() + " " + common_goals[1].getDescription());
 			System.out.println("-------------------------------------");
-			boolean k;
+			boolean Verify_correct_choose;
 			do
 			{
-				 k=players[i].chooseTile(m, nPlayers);
-			}while(!k);
+				Verify_correct_choose=players[i].chooseTile(m, nPlayers);
+			}while(!Verify_correct_choose);
 			
 			
 			
@@ -216,4 +216,5 @@ public class Main {
 
 		} while (common_goals[1] == null);
 	}
+	
 }

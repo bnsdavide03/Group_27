@@ -140,7 +140,7 @@ public class Player {
 					return false;
 				}
 				if(i>0) {
-					if(!((x[i]-1==x[i-1] && y[i]==y[i-1]) || (x[i]+1==x[i-1] && y[i]==y[i-1]) || (y[i]-1==y[i-1]&& x[i-1]==x[i]) || (y[i]-1==y[i-1]&& x[i-1]==x[i]))) {
+					if((x[i]-1==x[i-1] || x[i]+1==x[i-1] || y[i]-1==y[i-1] || y[i]-1==y[i-1])==false) {
 						
 						System.out.println("The tile is not adjacent to the previous one"); 
 						return false;
@@ -151,6 +151,8 @@ public class Player {
 				}
 			
 		}
+		
+		
 		
 		for(int i=0;i<choice;i++) {
 			tiles[i]=map.takeTile(x[i],y[i]);
@@ -191,6 +193,43 @@ public class Player {
 
 	public Personal_Card getPersonalCard() {
 		return personalCard;
+	}
+	
+	public void  putInLibrary(Position p[],Map map,int nPlayers)
+	{
+		System.out.println("inserisci la colonna da 1 a 5"); 
+		Scanner sc=new Scanner(System.in);
+		boolean verifica_colonna=false;
+		int input=0;
+		while(verifica_colonna==false)
+			{
+			 input =sc.nextInt();
+			if(input>0&&input<6)
+			{
+				verifica_colonna=true;
+				input=input-1;
+			}
+			}
+		try
+		{
+			//cerca prima riga libera 
+			int i=5;
+			while(this.library.getTile(new Position(i,input))!=null)
+			{
+				i=i-1;
+			}
+			for(int f=0;f<p.length;f++)
+			{
+				this.library.setTile(new Position(i-f,input), map.getTile(p[f]));
+			}
+		}
+		catch(Exception e)
+		{
+			chooseTile(map,nPlayers);
+		}
+		
+		///il codice potrebbe crascare inserire eccezione 
+		
 	}
 
 }
