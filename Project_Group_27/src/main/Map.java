@@ -234,7 +234,6 @@ public class Map {
 
 	
 	public void takeTile(Position position) {
-		Tile tile= this.map[position.getX()][position.getY()];
 		this.map[position.getX()][position.getY()] = null;
 	}
 
