@@ -225,6 +225,14 @@ public class Map {
 		System.out.println("Invalid tile");
 		return false;
 	}
+
+
+	public Tile getTile(Position p)
+	{
+		return this.map[p.getX()][p.getY()];
+	}
+
+	
 	public void takeTile(Position position) {
 		Tile tile= this.map[position.getX()][position.getY()];
 		this.map[position.getX()][position.getY()] = null;

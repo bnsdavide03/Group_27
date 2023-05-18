@@ -5,6 +5,7 @@ import java.security.SecureRandom;
 
 import personal_card.*;
 import java.util.Scanner;
+
 public class Player {
 	private int id;
 	private String name;
@@ -24,19 +25,19 @@ public class Player {
 	}
 
 	Personal_Card getRandomObject(int[] arrayPersonalCardAvailable) {
-		
+
 		int upperbound = 12;
 		int r;
 		boolean found;
 		do {
 			SecureRandom rand = new SecureRandom();
-			found=true;
+			found = true;
 			r = rand.nextInt(upperbound);
 			r++;
-			//System.out.println("r trovato= "+r);
-			if(arrayPersonalCardAvailable[r-1]==r){
-				found=false;
-				arrayPersonalCardAvailable[r-1]=-1;
+			// System.out.println("r trovato= "+r);
+			if (arrayPersonalCardAvailable[r - 1] == r) {
+				found = false;
+				arrayPersonalCardAvailable[r - 1] = -1;
 			}
 		} while (found == true);
 
@@ -93,14 +94,13 @@ public class Player {
 	int incrementPoints(int points) {
 		return this.points;
 	}
-	
-	void ToString()
-	{
-		System.out.println("Id: "+this.id);
-		System.out.println("Name: "+this.name);
-		System.out.println("Chair: "+this.chair);
-		System.out.println("Points: "+this.points);
-		System.out.println("Personal Card: "+this.personalCard.getClass().getSimpleName()+"\n");
+
+	void ToString() {
+		System.out.println("Id: " + this.id);
+		System.out.println("Name: " + this.name);
+		System.out.println("Chair: " + this.chair);
+		System.out.println("Points: " + this.points);
+		System.out.println("Personal Card: " + this.personalCard.getClass().getSimpleName() + "\n");
 	}
 
 	/*
@@ -132,12 +132,13 @@ public class Player {
 				if(!map.verifyTile(pos[i])) {
 					return false;
 				}
-				
+
 				if(i > 0) {
 					if(! ((pos[i].getX()-1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getX()+1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getY()-1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()) || (pos[i].getY()-1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()))) {
-						System.out.println("The tile is not adjacent to the previous one"); 
+						System.out.println("The tile is not adjacent to the previous ones"); 
 						return false;
-					}
+				}
+
 					if (i > 1) {
 						if (! (pos[0].getX()-1 == pos[2].getX() && pos[0].getY() == pos[2].getY())) {
 							System.out.println("The tile is not adjacent to the previous ones"); 
@@ -187,6 +188,35 @@ public class Player {
 
 	public Personal_Card getPersonalCard() {
 		return personalCard;
+	}
+
+	public void putInLibrary(Position p[], Map map, int nPlayers) {
+		System.out.println("inserisci la colonna da 1 a 5");
+		Scanner sc = new Scanner(System.in);
+		boolean verifica_colonna = false;
+		int input = 0;
+		while (verifica_colonna == false) {
+			input = sc.nextInt();
+			if (input > 0 && input < 6) {
+				verifica_colonna = true;
+				input = input - 1;
+			}
+		}
+		try {
+			// cerca prima riga libera
+			int i = 5;
+			while (this.library.getTile(new Position(i, input)) != null) {
+				i = i - 1;
+			}
+			for (int f = 0; f < p.length; f++) {
+				this.library.setTile(new Position(i - f, input), map.getTile(p[f]));
+			}
+		} catch (Exception e) {
+			chooseTile(map, nPlayers);
+		}
+
+		/// il codice potrebbe crascare inserire eccezione
+
 	}
 
 }
