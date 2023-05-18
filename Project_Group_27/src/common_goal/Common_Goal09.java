@@ -25,7 +25,7 @@ public class Common_Goal09 extends Common_Goal {
 						array[0]++;
 					} else if (library.getTile(p).getColor() == Color.BLUE) {
 						array[1]++;
-					} else if (library.getTile(p).getColor() == Color.LIGHT_BLUE) {
+					} else if (library.getTile(p).getColor() == Color.L_BLUE) {
 						array[2]++;
 					} else if (library.getTile(p).getColor() == Color.GREEN) {
 						array[3]++;

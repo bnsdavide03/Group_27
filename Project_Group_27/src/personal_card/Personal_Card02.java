@@ -10,7 +10,7 @@ public class Personal_Card02 extends Personal_Card {
 	
 	public Personal_Card02()
 	{
-		position.add(new Tile(new Position(1,3),Color.LIGHT_BLUE));
+		position.add(new Tile(new Position(1,3),Color.L_BLUE));
 		position.add(new Tile(new Position(3,2),Color.YELLOW));
 		position.add(new Tile(new Position(2,4),Color.WHITE));
 		position.add(new Tile(new Position(3,0),Color.GREEN));

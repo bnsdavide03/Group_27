@@ -37,7 +37,7 @@ public class Library {
 						System.out.print(" B ");
 					} else if (library[i][k].getColor() == Color.GREEN) {
 						System.out.print(" G ");
-					} else if (library[i][k].getColor() == Color.LIGHT_BLUE) {
+					} else if (library[i][k].getColor() == Color.L_BLUE) {
 						System.out.print(" L ");
 					} else if (library[i][k].getColor() == Color.PINK) {
 						System.out.print(" P ");

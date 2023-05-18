@@ -43,7 +43,7 @@ public class Common_Goal04 extends Common_Goal{
 									{
 										quantità_quadrati_colore[1]++;
 									}
-									else if(t1.getColor()==Color.LIGHT_BLUE)
+									else if(t1.getColor()==Color.L_BLUE)
 									{
 										quantità_quadrati_colore[2]++;
 									}

@@ -115,45 +115,41 @@ public class Player {
 		System.out.println("How many tiles do you want to take? Enter a number from 1 to 3");
 		choice=sc.nextInt();
 		Tile tiles[]= new Tile[choice];
-		int x[]= new int[choice];
-		int y[]= new int[choice];
+		Position pos [] = new Position [choice];
+		int x, y;
+		
+		// CHIEDERE ALLA PROFE
 		
 		for(int i=0;i<choice;i++) {
 	
 			System.out.println("Enter coordinates of tail: "+(i+1));
 				System.out.println("\tEnter x coordinate: ");
-				x[i]=sc.nextInt();
+				x = sc.nextInt();
 				System.out.println("\tEnter y coordinate: ");
-				y[i]=sc.nextInt();
-				if(nPlayers<4 && (x[i]==4 && y[i]==0)|| (x[i]==3 && y[i]==1)||(x[i]==0 && y[i]==4)||(x[i]==1 && y[i]==5)||(x[i]==4 && y[i]==8)||(x[i]==5 && y[i]==7)||(x[i]==8 && y[i]==4)||(x[i]==7 && y[i]==3)) {
-					//check if the player has chosen tiles that are only there with 4 players
-					System.out.println("Invalid selection: no tile found.");
+				y = sc.nextInt();
+				pos[i] = new Position (x,y);
+				
+				if(!map.verifyTile(pos[i])) {
 					return false;
 				}
-				if(nPlayers==2 && (x[i]==5 && y[i]==0)|| (x[i]==2 && y[i]==2)||(x[i]==0 && y[i]==3)||(x[i]==2 && y[i]==6)||(x[i]==3 && y[i]==8)||(x[i]==6 && y[i]==6)||(x[i]==8 && y[i]==5)||(x[i]==6 && y[i]==2)) {
-					//check if the player has chosen tiles that are only there with 3 players
-					System.out.println("Invalid selection: no tile found.");
-					return false;
-				}
-
-				if( map.verifyTile(x[0], y[0])==false) {
-					return false;
-				}
-				if(i>0) {
-					if(!((x[i]-1==x[i-1] && y[i]==y[i-1]) || (x[i]+1==x[i-1] && y[i]==y[i-1]) || (y[i]-1==y[i-1]&& x[i-1]==x[i]) || (y[i]-1==y[i-1]&& x[i-1]==x[i]))) {
-						
+				
+				if(i > 0) {
+					if(! ((pos[i].getX()-1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getX()+1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getY()-1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()) || (pos[i].getY()-1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()))) {
 						System.out.println("The tile is not adjacent to the previous one"); 
 						return false;
 					}
-					if(!map.verifyTile(x[i], y[i])) {
-						return false;
+					if (i > 1) {
+						if (! (pos[0].getX()-1 == pos[2].getX() && pos[0].getY() == pos[2].getY())) {
+							System.out.println("The tile is not adjacent to the previous ones"); 
+							return false;
+						}
 					}
 				}
 			
 		}
 		
-		for(int i=0;i<choice;i++) {
-			tiles[i]=map.takeTile(x[i],y[i]);
+		for(int j = 0; j < choice; j++) {
+		map.takeTile(pos[j]);
 		}
 		return true;
 	}

@@ -105,7 +105,7 @@ public class Map {
 							} else if (int_random == 2) {
 								if (light_blue_card != 0) {
 									light_blue_card = -1;
-									map[i][k] = new Tile(new Position(i, k), Color.LIGHT_BLUE);
+									map[i][k] = new Tile(new Position(i, k), Color.L_BLUE);
 								} else {
 									contro = true;
 								}
@@ -173,9 +173,23 @@ public class Map {
 	}
 
 	public void visualmap() {
+		
+		System.out.print("\t");
+		
+		for (int j = 0; j < 9; j++) {
+			
+			System.out.print(j + "\t");
+			
+		}
+		
+		System.out.println();
+		
 		for (int i = 0; i < 9; i++) {
+			
+			System.out.print(i + "\t");
+			
 			for (int k = 0; k < 9; k++) {
-				if(map[i][k]!=null)
+				if(i < 9 && k < 9 && map[i][k]!=null)
 				{
 					if(map[i][k].getP().getX()!=-1)
 					{
@@ -197,24 +211,23 @@ public class Map {
 			System.out.println();
 		}
 	}
-	public boolean verifyTile(int x, int y) {
-		if(this.map[x][y]==null || this.map[x][y].getTile()==-1) {
+	public boolean verifyTile(Position position) {
+		if(this.map[position.getX()][position.getY()]==null || this.map[position.getX()][position.getY()].getTile()==-1) {
 			System.out.println("Invalid selection: no tile found.");
 			return false;
 		}
-		if((x==0 && y==3) || (x==0 && y==4) || (x==5 && y==0) || (x==4 && y==0) || (x==3 && y==8) || (x==4 && y==8) || (x== 8 && y==5) || (x==8 && y==4)) {
+		if((position.getX()==0 && position.getY()==3) || (position.getX()==0 && position.getY()==4) || (position.getX()==5 && position.getY()==0) || (position.getX()==4 && position.getY()==0) || (position.getX()==3 && position.getY()==8) || (position.getX()==4 && position.getY()==8) || (position.getX()== 8 && position.getY()==5) || (position.getX()==8 && position.getY()==4)) {
 			return true;
 		}
-		if(this.map[x+1][y]==null || this.map[x-1][y]==null || this.map[x][y+1]==null || this.map[x][y-1]==null || this.map[x+1][y].getTile() == -1 || this.map[x-1][y].getTile() == -1|| this.map[x][y+1].getTile() == -1|| this.map[x][y-1].getTile() == -1 ) {
+		if(this.map[position.getX()+1][position.getY()]==null || this.map[position.getX()-1][position.getY()]==null || this.map[position.getX()][position.getY()+1]==null || this.map[position.getX()][position.getY()-1]==null || this.map[position.getX()+1][position.getY()].getTile() == -1 || this.map[position.getX()-1][position.getY()].getTile() == -1|| this.map[position.getX()][position.getY()+1].getTile() == -1|| this.map[position.getX()][position.getY()-1].getTile() == -1 ) {
 			return true;
 		}
 		System.out.println("Invalid tile");
 		return false;
 	}
-	public Tile takeTile(int x, int y) {
-		Tile tile= this.map[x][y];
-		this.map[x][y]= null;
-		return tile;
+	public void takeTile(Position position) {
+		Tile tile= this.map[position.getX()][position.getY()];
+		this.map[position.getX()][position.getY()] = null;
 	}
 
 }
