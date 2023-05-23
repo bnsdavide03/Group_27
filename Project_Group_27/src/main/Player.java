@@ -169,9 +169,7 @@ public class Player {
 		}
 		
 		this.putInLibrary(pos, map, nPlayers);
-		for(int j = 0; j < choice; j++) {
-		map.takeTile(pos[j]);
-		}
+		
 		return true;
 	}
 
@@ -211,6 +209,69 @@ public class Player {
 	}
 
 	public void putInLibrary(Position p[], Map map, int nPlayers) {
+		
+		for(int i=0;i<p.length;i++)
+		{
+			if(map.getTile(p[i]).getColor()==Color.BLUE)
+			{
+				System.out.print("\u001B[34m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			}
+			else if(map.getTile(p[i]).getColor()==Color.GREEN)
+			{
+				System.out.print("\u001B[32m"+map.getTile(p[i]).getColor()+ "\033[0m\t\t");
+			}
+			else if(map.getTile(p[i]).getColor()==Color.L_BLUE)
+			{
+				System.out.print("\u001B[36m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			}
+			else if(map.getTile(p[i]).getColor()==Color.PINK)
+			{
+				System.out.print("\u001B[35m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			}
+			else if(map.getTile(p[i]).getColor()==Color.WHITE)
+			{
+				System.out.print("\u001B[37m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			}
+			else if(map.getTile(p[i]).getColor()==Color.YELLOW)
+			{
+				System.out.print("\u001B[33m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			}
+		}
+		Position p1[]=new Position[p.length];
+		
+		
+		for (int i=1;i<p.length;i++)
+		{
+			int choice;
+			
+			Scanner sc = new Scanner(System.in);
+			do {
+				System.out.println("inserisci quale dei "+p.length+" colori vuoi inserire nella posizione "+i);
+				try {
+					choice = Integer.parseInt(sc.next());
+				} catch (Exception e) {
+					choice = -1;
+				}
+
+				if (choice > 3 || choice <= 0) {
+					System.out.println("Number not valid! Insert a number between 1 and 3\n");
+				}
+			} while (choice > 3 || choice <= 0);
+			p1[i-1]=new Position(p[choice-1].getX(),p[choice-1].getY()) ;
+			p[choice-1]=null;
+		}
+		for(int i=0;i<p.length;i++)
+		{
+			if(p[i]!=null)
+			{
+				p1[p.length-1]=p[i];
+				//System.out.println("la pos"+p1[p.length-1].getX()+p1[p.length-1].getY());
+			}
+		}
+		/*for(int i=0;i<p1.length;i++)
+		{
+			System.out.println("la pos"+p1[i].getX()+p1[i].getY());
+		}*/
 		System.out.println("inserisci la colonna da 1 a 5");
 		Scanner sc = new Scanner(System.in);
 		boolean verifica_colonna = false;
@@ -228,8 +289,8 @@ public class Player {
 			while (this.library.getTile(new Position(i, input)) != null) {
 				i = i - 1;
 			}
-			for (int f = 0; f < p.length; f++) {
-				this.library.setTile(new Position(i - f, input), map.getTile(p[f]));
+			for (int f = 0; f < p1.length; f++) {
+				this.library.setTile(new Position(i - f, input), map.getTile(p1[f]));
 			}
 		} catch (Exception e) {
 			System.out.println("Not enough space in the selected column");
@@ -237,6 +298,10 @@ public class Player {
 		}
 
 		/// il codice potrebbe crascare inserire eccezione
+			
+			for(int j = 0; j < p1.length; j++) {
+				map.takeTile(p1[j]);
+			}
 
 	}
 
