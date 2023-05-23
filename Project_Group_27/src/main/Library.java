@@ -55,4 +55,14 @@ public class Library {
 		}
 		System.out.println("");
 	}
+	public boolean isFull() {
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 5; j++) {
+				if(this.library[i][j]==null) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 }
