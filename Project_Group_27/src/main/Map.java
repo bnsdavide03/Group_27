@@ -193,7 +193,30 @@ public class Map {
 				{
 					if(map[i][k].getP().getX()!=-1)
 					{
-						System.out.print(map[i][k].getColor() + "\t");
+						if(map[i][k].getColor()==Color.BLUE)
+						{
+							System.out.print("\u001B[34m"+map[i][k].getColor() + "\033[0m\t\t");
+						}
+						else if(map[i][k].getColor()==Color.GREEN)
+						{
+							System.out.print("\u001B[32m"+map[i][k].getColor() + "\033[0m\t\t");
+						}
+						else if(map[i][k].getColor()==Color.L_BLUE)
+						{
+							System.out.print("\u001B[36m"+map[i][k].getColor() + "\033[0m\t\t");
+						}
+						else if(map[i][k].getColor()==Color.PINK)
+						{
+							System.out.print("\u001B[35m"+map[i][k].getColor() + "\033[0m\t\t");
+						}
+						else if(map[i][k].getColor()==Color.WHITE)
+						{
+							System.out.print("\u001B[37m"+map[i][k].getColor() + "\033[0m\t\t");
+						}
+						else if(map[i][k].getColor()==Color.YELLOW)
+						{
+							System.out.print("\u001B[33m"+map[i][k].getColor() + "\033[0m\t\t");
+						}
 					}
 					else
 					{

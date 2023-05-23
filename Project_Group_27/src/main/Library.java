@@ -34,17 +34,17 @@ public class Library {
 				if (library[i][k] != null) {
 
 					if (library[i][k].getColor() == Color.BLUE) {
-						System.out.print(" B ");
+						System.out.print("\u001B[34m B \033[0m");
 					} else if (library[i][k].getColor() == Color.GREEN) {
-						System.out.print(" G ");
+						System.out.print("\u001B[32m G \033[0m");
 					} else if (library[i][k].getColor() == Color.L_BLUE) {
-						System.out.print(" L ");
+						System.out.print("\u001B[36m L \033[0m");
 					} else if (library[i][k].getColor() == Color.PINK) {
-						System.out.print(" P ");
+						System.out.print("\u001B[35m P \033[0m");
 					} else if (library[i][k].getColor() == Color.WHITE) {
-						System.out.print(" W ");
+						System.out.print("\u001B[37m W \033[0m");
 					} else if (library[i][k].getColor() == Color.YELLOW) {
-						System.out.print(" Y ");
+						System.out.print("\u001B[33m Y \033[0m");
 					}
 				} else {
 					System.out.print(" 0 ");
