@@ -145,6 +145,7 @@ public class Main {
 		for(i=0;i<nPlayers;i++)
 		{
 			players[i].addPoints(players[i].verifyPersonalCard());
+			players[i].verifyPlanceGoal();
 		}
 		System.out.println("GAME IS FINISHED WITH THIS RESULTS");
 		for(i=0;i<nPlayers;i++)
@@ -227,6 +228,25 @@ public class Main {
 		 * 
 		 * Player player1=new Player("Davide");
 		 * System.out.println(player1.verifyPersonalCard());
+		 * lib.library[5][0]=new Tile(new Position(1,1),Color.BLUE);
+		 * lib.library[1][1]=new Tile(new Position(4,1),Color.BLUE);
+		 * lib.library[2][1]=new Tile(new Position(3,1),Color.L_BLUE);
+		 * lib.library[3][1]=new Tile(new Position(2,1),Color.BLUE);
+		 * lib.library[4][1]=new Tile(new Position(1,1),Color.GREEN);
+		 * lib.library[5][1]=new Tile(new Position(1,1),Color.BLUE);
+		 * lib.library[0][2]=new Tile(new Position(0,1),Color.BLUE);
+		 * lib.library[1][2]=new Tile(new Position(4,1),Color.PINK);
+		 * lib.library[1][3]=new Tile(new Position(4,1),Color.BLUE);
+		 * lib.library[2][3]=new Tile(new Position(3,1),Color.BLUE);
+		 * lib.library[3][3]=new Tile(new Position(2,1),Color.BLUE);
+		 * lib.library[4][3]=new Tile(new Position(1,1),Color.YELLOW);
+		 * lib.library[5][3]=new Tile(new Position(1,1),Color.PINK);
+		 * lib.library[0][4]=new Tile(new Position(0,1),Color.GREEN);
+		 * lib.visualLibrary();
+		 * Player pf=new Player(Gi,lib);
+		 * pf.verifyPlanceGoal();
+		 * lib.visualLibrary();
+		 * System.out.println(pf.getPoints()); 
 		 */
 
 	}
