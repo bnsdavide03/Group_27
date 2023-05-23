@@ -16,9 +16,8 @@ public class Common_Goal04 extends Common_Goal{
 	@Override
 	public boolean verify_goal(Library library) {
 
-		Library virtualLibrary = new Library();
+		Library virtualLibrary = new Library(library);
 		// private Tile virtualLibrary[][]= new Tile[6][5];
-		virtualLibrary = library;
 		
 		int quantità_quadrati_colore[]=new int[6];
 		for (int i = 0; i < 6; i++) {
