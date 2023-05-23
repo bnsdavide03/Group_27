@@ -22,7 +22,7 @@ public abstract class Personal_Card {
 		library.visualLibrary();
 	}
 
-	public int calcolaPunti(Map map) {
+	/*public int calcolaPunti(Map map) {
 		int count = 0;
 		for (int i = 0; i < 6; i++) {
 			if (position.get(i)
@@ -53,6 +53,6 @@ public abstract class Personal_Card {
 
 		}
 		return 0;
-	}
+	}*/
 
 }

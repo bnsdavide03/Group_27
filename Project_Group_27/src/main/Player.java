@@ -87,9 +87,9 @@ public class Player {
 		return this.name;
 	}
 
-	public int calculateTotalPoints() {
+	/*public int calculateTotalPoints() {
 		return this.points;
-	}
+	}*/
 
 	void setChairTrue() {
 		this.chair = true;
@@ -141,10 +141,10 @@ public class Player {
 		
 		for(int i=0;i<choice;i++) {
 	
-			System.out.println("Enter coordinates of tail: "+(i+1));
-				System.out.println("\tEnter coloumn value: ");
-				x = sc.nextInt();
+			System.out.println("Enter coordinates of tile: "+(i+1));
 				System.out.println("\tEnter row value: ");
+				x = sc.nextInt();
+				System.out.println("\tEnter column value: ");
 				y = sc.nextInt();
 				pos[i] = new Position (x,y);
 				
@@ -246,7 +246,7 @@ public class Player {
 			
 			Scanner sc = new Scanner(System.in);
 			do {
-				System.out.println("inserisci quale dei "+p.length+" colori vuoi inserire nella posizione "+i);
+				System.out.println("insert which of "+p.length+" colors you want to insert in "+i+" position");
 				try {
 					choice = Integer.parseInt(sc.next());
 				} catch (Exception e) {

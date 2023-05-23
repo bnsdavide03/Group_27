@@ -79,11 +79,13 @@ public class Main {
 				for (int j = 0; j < 100; ++j)
 					System.out.println();
 
-				System.out.println("It is player " + (i + 1) + "'s turn");
+				System.out.println("It is "+players[i].getName() + "'s turn");
 				System.out.println("-------------------------------------");
 				System.out.println("Map:");
 				m.visualmap();
 				System.out.println("-------------------------------------");
+				System.out.println("Your library:");
+
 				players[i].library.visualLibrary();
 				System.out.println("-------------------------------------");
 				System.out.println("PersonalGoal:");
@@ -116,7 +118,9 @@ public class Main {
 						commonGoalPointsAvailableForPlayer2[i] = true;
 					}
 				}
-				
+				System.out.println("Your library updated:");
+				players[i].library.visualLibrary();
+				System.out.println("-------------------------------------");
 				if (m.verifyMap() == 1) {
 					System.out.println("-------------------------------------");
 					System.out.println("Map updated!!");
@@ -136,7 +140,32 @@ public class Main {
 
 				new java.util.Scanner(System.in).nextLine();
 			}
+			
 		}
+		for(i=0;i<nPlayers;i++)
+		{
+			players[i].addPoints(players[i].verifyPersonalCard());
+		}
+		System.out.println("GAME IS FINISHED WITH THIS RESULTS");
+		for(i=0;i<nPlayers;i++)
+		{
+			System.out.println("---------------------------------------");
+			System.out.println("Player "+players[i].getName());
+			System.out.println("Points "+players[i].getPoints());
+		}
+		System.out.println("---------------------------------------");
+		String WinnerName="";
+		int pointsMax=0;
+		for(i=0;i<nPlayers;i++)
+		{
+			if(players[i].getPoints()>pointsMax)
+			{
+				pointsMax=players[i].getPoints();
+				WinnerName=players[i].getName();
+			}
+		}
+		System.out.println("THE WINNER IS "+WinnerName+" with "+pointsMax+" points");
+		
 		/*
 		 * Library lib=new Library(); lib.setTile(new Position(0,0), new Tile(new
 		 * Position (0,0), Color.YELLOW)); lib.setTile(new Position(1,0), new Tile(new
