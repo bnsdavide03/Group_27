@@ -226,7 +226,7 @@ public class Map {
 				}
 				else
 				{
-					System.out.print("null\t");
+					System.out.print("---\t");
 				}
 				
 			

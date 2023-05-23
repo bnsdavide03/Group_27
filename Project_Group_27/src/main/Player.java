@@ -78,6 +78,10 @@ public class Player {
 	public int getPoints() {
 		return this.points;
 	}
+	
+	public void addPoints(int points) {
+		this.points+=points;
+	}
 
 	public String getName() {
 		return this.name;
@@ -112,8 +116,23 @@ public class Player {
 		int choice;
 		
 		Scanner sc= new Scanner(System.in);
-		System.out.println("How many tiles do you want to take? Enter a number from 1 to 3");
-		choice=sc.nextInt();
+		
+		do {
+			System.out.println("How many tiles do you want to take? Enter a number from 1 to 3");
+			try {
+				choice = Integer.parseInt(sc.next());
+			} catch (Exception e) {
+				choice = -1;
+			}
+
+			if (choice > 3 || choice <= 0) {
+				System.out.println("Number not valid! Insert a number between 1 and 3\n");
+			}
+		} while (choice > 3 || choice <= 0);
+		
+		
+		
+		
 		Tile tiles[]= new Tile[choice];
 		Position pos [] = new Position [choice];
 		int x, y;
@@ -123,9 +142,9 @@ public class Player {
 		for(int i=0;i<choice;i++) {
 	
 			System.out.println("Enter coordinates of tail: "+(i+1));
-				System.out.println("\tEnter x coordinate: ");
+				System.out.println("\tEnter coloumn value: ");
 				x = sc.nextInt();
-				System.out.println("\tEnter y coordinate: ");
+				System.out.println("\tEnter row value: ");
 				y = sc.nextInt();
 				pos[i] = new Position (x,y);
 				
@@ -213,6 +232,7 @@ public class Player {
 				this.library.setTile(new Position(i - f, input), map.getTile(p[f]));
 			}
 		} catch (Exception e) {
+			System.out.println("Not enough space in the selected column");
 			chooseTile(map, nPlayers);
 		}
 

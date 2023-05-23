@@ -9,6 +9,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		int[] arrayPersonalCardAvailable = new int[12];
+		boolean[] commonGoalPointsAvailableForPlayer1 = new boolean[4];
+		boolean[] commonGoalPointsAvailableForPlayer2 = new boolean[4];
 		for (int i = 0; i < 12; i++) {
 			arrayPersonalCardAvailable[i] = i + 1;
 		}
@@ -88,12 +90,32 @@ public class Main {
 			{
 				Verify_correct_choose=players[i].chooseTile(m, nPlayers);
 			}while(!Verify_correct_choose);
-			
-			
-			
+			//verify common goals, if they return true give points
+			boolean resultCommonGoal;
+			if(commonGoalPointsAvailableForPlayer1[i]==false) {
+				resultCommonGoal=common_goals[0].verify_goal(players[i].library);
+				if(resultCommonGoal==true) {
+					players[i].addPoints(common_goals[0].givePoints());
+					System.out.println(common_goals[0].getClass().getSimpleName() + " completed");
+					commonGoalPointsAvailableForPlayer1[i]=true;
+				}
+			}
+			if(commonGoalPointsAvailableForPlayer2[i]==false) {
+				resultCommonGoal=common_goals[1].verify_goal(players[i].library);
+				if(resultCommonGoal==true) {
+					players[i].addPoints(common_goals[1].givePoints());
+					System.out.println(common_goals[1].getClass().getSimpleName() + " completed");
+					commonGoalPointsAvailableForPlayer2[i]=true;
+				}
+			}
 			i++;
 			i = i % nPlayers;
 			System.out.println("Press Any Key To Continue...");
+			if(m.verifyMap()==1) {
+				System.out.println("-------------------------------------");
+				System.out.println("Map updated!!");
+				System.out.println("-------------------------------------");
+			}
 			new java.util.Scanner(System.in).nextLine();
 		}
 		/*

@@ -74,6 +74,7 @@ public abstract class Common_Goal {
 			if(this.remaningCards[3-i]!=0) {
 				int n= this.remaningCards[3-i];
 				this.remaningCards[3-i]=0;
+				System.out.println("Congratulations, you earn "+n+" points");
 				return n;
 			}
 		}
