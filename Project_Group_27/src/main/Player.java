@@ -134,13 +134,13 @@ public class Player {
 				}
 
 				if(i > 0) {
-					if(! ((pos[i].getX()-1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getX()+1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getY()-1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()) || (pos[i].getY()-1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()))) {
+					if(! ((pos[i].getX()-1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getX()+1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getY()+1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()) || (pos[i].getY()-1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()))) {
 						System.out.println("The tile is not adjacent to the previous ones"); 
 						return false;
 				}
 
 					if (i > 1) {
-						if (! (pos[0].getX()-1 == pos[2].getX() && pos[0].getY() == pos[2].getY())) {
+						if (! (pos[0].getX() == pos[2].getX() || pos[0].getY() == pos[2].getY())) {
 							System.out.println("The tile is not adjacent to the previous ones"); 
 							return false;
 						}
@@ -149,6 +149,7 @@ public class Player {
 			
 		}
 		
+		this.putInLibrary(pos, map, nPlayers);
 		for(int j = 0; j < choice; j++) {
 		map.takeTile(pos[j]);
 		}
