@@ -46,7 +46,11 @@ public class Main {
 			players[i] = new Player(name, i + 1, chair, arrayPersonalCardAvailable);
 
 		}
-
+		/*for(int i=0;i<6;i++) {
+			for(int j=0;j<4;j++) {
+				players[0].library.library[i][j]=new  Tile(new Position(i,j), Color.WHITE);
+			}
+		}*/
 		System.out.println("Players: ");
 
 		for (int i = 0; i < nPlayers; i++) {
@@ -66,57 +70,72 @@ public class Main {
 		// start loop of shifts
 		boolean game = true;
 		int i = idInitialPlayer;
-		while (game == true) {
-			for (int j = 0; j < 100; ++j)
-				System.out.println();
+		int idFirstPlayerToFinish = -1;
+		while (game == true || idFirstPlayerToFinish != -1) {
+			if (players[i].isChair() && idFirstPlayerToFinish != -1) {
+				break;
+			} else {
 
-			System.out.println("It is player " + (i + 1) + "'s turn");
-			System.out.println("-------------------------------------");
-			System.out.println("Map:");
-			m.visualmap();
-			System.out.println("-------------------------------------");
-			players[i].library.visualLibrary();
-			System.out.println("-------------------------------------");
-			System.out.println("PersonalGoal:");
-			players[i].getPersonalCard().Visual_Personal_Card();
-			System.out.println("-------------------------------------");
-			System.out.println("Common_Goal 1:");
-			System.out.println(common_goals[0].getClass().getSimpleName() + " " + common_goals[0].getDescription());
-			System.out.println("Common_Goal 2:");
-			System.out.println(common_goals[1].getClass().getSimpleName() + " " + common_goals[1].getDescription());
-			System.out.println("-------------------------------------");
-			boolean Verify_correct_choose;
-			do
-			{
-				Verify_correct_choose=players[i].chooseTile(m, nPlayers);
-			}while(!Verify_correct_choose);
-			//verify common goals, if they return true give points
-			boolean resultCommonGoal;
-			if(commonGoalPointsAvailableForPlayer1[i]==false) {
-				resultCommonGoal=common_goals[0].verify_goal(players[i].library);
-				if(resultCommonGoal==true) {
-					players[i].addPoints(common_goals[0].givePoints());
-					System.out.println(common_goals[0].getClass().getSimpleName() + " completed");
-					commonGoalPointsAvailableForPlayer1[i]=true;
-				}
-			}
-			if(commonGoalPointsAvailableForPlayer2[i]==false) {
-				resultCommonGoal=common_goals[1].verify_goal(players[i].library);
-				if(resultCommonGoal==true) {
-					players[i].addPoints(common_goals[1].givePoints());
-					System.out.println(common_goals[1].getClass().getSimpleName() + " completed");
-					commonGoalPointsAvailableForPlayer2[i]=true;
-				}
-			}
-			i++;
-			i = i % nPlayers;
-			System.out.println("Press Any Key To Continue...");
-			if(m.verifyMap()==1) {
+				for (int j = 0; j < 100; ++j)
+					System.out.println();
+
+				System.out.println("It is player " + (i + 1) + "'s turn");
 				System.out.println("-------------------------------------");
-				System.out.println("Map updated!!");
+				System.out.println("Map:");
+				m.visualmap();
 				System.out.println("-------------------------------------");
+				players[i].library.visualLibrary();
+				System.out.println("-------------------------------------");
+				System.out.println("PersonalGoal:");
+				players[i].getPersonalCard().Visual_Personal_Card();
+				System.out.println("-------------------------------------");
+				System.out.println("Common_Goal 1:");
+				System.out.println(common_goals[0].getClass().getSimpleName() + " " + common_goals[0].getDescription());
+				System.out.println("Common_Goal 2:");
+				System.out.println(common_goals[1].getClass().getSimpleName() + " " + common_goals[1].getDescription());
+				System.out.println("-------------------------------------");
+				boolean Verify_correct_choose;
+				do {
+					Verify_correct_choose = players[i].chooseTile(m, nPlayers);
+				} while (!Verify_correct_choose);
+				// verify common goals, if they return true give points
+				boolean resultCommonGoal;
+				if (commonGoalPointsAvailableForPlayer1[i] == false) {
+					resultCommonGoal = common_goals[0].verify_goal(players[i].library);
+					if (resultCommonGoal == true) {
+						players[i].addPoints(common_goals[0].givePoints());
+						System.out.println(common_goals[0].getClass().getSimpleName() + " completed");
+						commonGoalPointsAvailableForPlayer1[i] = true;
+					}
+				}
+				if (commonGoalPointsAvailableForPlayer2[i] == false) {
+					resultCommonGoal = common_goals[1].verify_goal(players[i].library);
+					if (resultCommonGoal == true) {
+						players[i].addPoints(common_goals[1].givePoints());
+						System.out.println(common_goals[1].getClass().getSimpleName() + " completed");
+						commonGoalPointsAvailableForPlayer2[i] = true;
+					}
+				}
+				
+				if (m.verifyMap() == 1) {
+					System.out.println("-------------------------------------");
+					System.out.println("Map updated!!");
+					System.out.println("-------------------------------------");
+				}
+				if (players[i].library.isFull()==true && game == true) {
+					System.out.println("-------------------------------------");
+					System.out.println("you have finished your library for first");
+					System.out.println("-------------------------------------");
+					players[i].addPoints(1);
+					game = false;
+					idFirstPlayerToFinish = i;
+				}
+				i++;
+				i = i % nPlayers;
+				System.out.println("Press Any Key To Continue...");
+
+				new java.util.Scanner(System.in).nextLine();
 			}
-			new java.util.Scanner(System.in).nextLine();
 		}
 		/*
 		 * Library lib=new Library(); lib.setTile(new Position(0,0), new Tile(new
@@ -238,5 +257,5 @@ public class Main {
 
 		} while (common_goals[1] == null);
 	}
-	
+
 }

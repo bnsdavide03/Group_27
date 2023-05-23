@@ -305,4 +305,8 @@ public class Player {
 
 	}
 
+	public boolean isChair() {
+		return chair;
+	}
+
 }
