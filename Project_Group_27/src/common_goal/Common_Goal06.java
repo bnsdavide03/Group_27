@@ -1,3 +1,12 @@
+
+/**COMMON GOAL n°6 figlia
+ * Obiettivo comune n°6.
+ * La classe Common_Goal06 rappresenta un obiettivo comune specifico in un gioco.
+ * Otto tessere dello stesso tipo. 
+ * Non ci sono restrizioni sulla posizione di queste tessere.
+ * Questa classe estende la classe Common_Goal.
+ */
+
 package common_goal;
 
 import main.Color;
@@ -6,6 +15,13 @@ import main.Position;
 
 public class Common_Goal06 extends Common_Goal {
 
+	/**
+	 * Costruttore di Common_Goal06
+	 * Costruisce un oggetto Common_Goal06 con il numero specificato di giocatori.
+	 * 
+	 * @param nPlayers
+	 */
+	
 	public Common_Goal06(int nPlayers) {
 		super(nPlayers);
 		this.description = "Otto tessere dello stesso tipo. Non ci sono restrizioni sulla posizione di queste tessere";

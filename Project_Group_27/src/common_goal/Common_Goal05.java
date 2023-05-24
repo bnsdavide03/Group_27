@@ -1,3 +1,12 @@
+
+/**COMMON GOAL n°5 figlia
+ * Obiettivo comune n°5.
+ * La classe Common_Goal05 rappresenta un obiettivo comune specifico in un gioco.
+ * Tre colonne formate ciscuna da 6 tessere di uno, due o tre tipi differenti. 
+ * Colonne diverse possono avere combinazioni diverse di tipi di tessere.
+ * Questa classe estende la classe Common_Goal.
+ */
+
 package common_goal;
 
 import main.Color;
@@ -7,12 +16,25 @@ import main.Tile;
 
 public class Common_Goal05 extends Common_Goal {
 
+	/**
+	 * Costruttore per Common_Goal05
+	 * Costruisce un oggetto Common_Goal05 con il numero specificato di giocatori.
+	 * 
+	 * @param nPlayers = numero di giocatori
+	 */
+	
 	public Common_Goal05(int nPlayers) {
 		super(nPlayers);
 		this.description = "Tre colonne formate ciscuna da 6 tessere di uno, due o tre tipi differenti. Colonne diverse possono avere combinazioni diverse di tipi di tessere";
-		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Verifica se l'obiettivo specifico è stato raggiunto nella libreria.
+	 *
+	 * @param library = la libreria da verificare.
+	 * @return true se l'obiettivo è stato raggiunto, false altrimenti.
+	 */
+	
 	@Override
 	public boolean verify_goal(Library library) {
 		// library 6x5
