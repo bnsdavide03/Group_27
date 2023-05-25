@@ -136,7 +136,9 @@ public class Player {
 	}
 
 	/**
-	 * Imposta la posizione del giocatore come vera.
+	 * Imposta la posizione del giocatore come vera. ======= /* public int
+	 * calculateTotalPoints() { return this.points; } >>>>>>> branch 'main' of
+	 * https://github.com/bnsdavide03/Group_27.git
 	 */
 
 	void setChairTrue() {
@@ -355,28 +357,48 @@ public class Player {
 		}
 
 		System.out.println("inserisci la colonna da 1 a 5");
+
 		Scanner sc = new Scanner(System.in);
 		boolean verifica_colonna = false;
 		int input = 0;
-		while (verifica_colonna == false) {
-			input = sc.nextInt();
-			if (input > 0 && input < 6) {
-				verifica_colonna = true;
-				input = input - 1;
+		do {
+			System.out.println("insert the column from 1 to 5");
+			try {
+				input = Integer.parseInt(sc.next());
+			} catch (Exception e) {
+				input = -1;
+
 			}
+			if (input > 5 || input <= 0) {
+				System.out.println("number not valid!\n");
+			}
+		} while (input > 5 || input <= 0);
+
+		input = input - 1;
+
+		int i = 5;
+		while (this.library.getTile(new Position(i, input)) != null) {
+			i = i - 1;
 		}
+		int cont = 0;
 		try {
 			// cerca prima riga libera
-			int i = 5;
-			while (this.library.getTile(new Position(i, input)) != null) {
-				i = i - 1;
-			}
+
 			for (int f = 0; f < p1.length; f++) {
 				this.library.setTile(new Position(i - f, input), map.getTile(p1[f]));
+				cont++;
+			}
+			for (int j = 0; j < p1.length; j++) {
+				map.takeTile(p1[j]);
 			}
 		} catch (Exception e) {
+			for (int f = 0; f < cont; f++) {
+				this.library.setTile(new Position(i - f, input), null);
+			}
 			System.out.println("Not enough space in the selected column");
-			chooseTile(map, nPlayers);
+			while (chooseTile(map, nPlayers) == false)
+				;
+
 		}
 
 		/// il codice potrebbe crascare inserire eccezione
@@ -384,7 +406,6 @@ public class Player {
 		for (int j = 0; j < p1.length; j++) {
 			map.takeTile(p1[j]);
 		}
-
 	}
 
 	/**
@@ -457,29 +478,39 @@ public class Player {
 	 */
 
 	public void verifyPlanceGoal() {
+
+		Library lib = new Library(this.library);
+
 		int count = 0;
 		int goalPoints = 0;
 		Color color[] = { Color.BLUE, Color.PINK, Color.L_BLUE, Color.GREEN, Color.YELLOW, Color.WHITE };
 		for (int j = 0; j < 6; j++) {
 			for (int i = 0; i < 6; i++) {
 				for (int k = 0; k < 5; k++) {
+
 					if (this.library.getTile(new Position(i, k)) != null
 							&& this.library.getTile(new Position(i, k)).getColor() == color[j]) {
 						count = remove_adjacency(this.library, new Position(i, k), color[j], count);
+
+						if (lib.getTile(new Position(i, k)) != null
+								&& lib.getTile(new Position(i, k)).getColor() == color[j]) {
+							count = remove_adjacency(lib, new Position(i, k), color[j], count);
+						}
+						if (count == 3) {
+							goalPoints = 2;
+						} else if (count == 4) {
+							goalPoints = 3;
+						} else if (count == 5) {
+							goalPoints = 5;
+						} else if (count >= 6) {
+							goalPoints = 8;
+						}
+						this.points += goalPoints;
+						count = 0;
+						goalPoints = 0;
 					}
-					if (count == 3) {
-						goalPoints = 2;
-					} else if (count == 4) {
-						goalPoints = 3;
-					} else if (count == 5) {
-						goalPoints = 5;
-					} else if (count >= 6) {
-						goalPoints = 8;
-					}
-					this.points += goalPoints;
-					count = 0;
-					goalPoints = 0;
 				}
+
 			}
 		}
 	}

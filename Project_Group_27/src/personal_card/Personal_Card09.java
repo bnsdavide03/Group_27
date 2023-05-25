@@ -17,7 +17,6 @@ import main.Position;
  * posizioni dei tile sulla libreria.
  */
 
-
 public class Personal_Card09 extends Personal_Card {
 	
 	/**

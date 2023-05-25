@@ -58,7 +58,12 @@ public class Main {
 			players[i] = new Player(name, i + 1, chair, arrayPersonalCardAvailable);
 
 		}
-
+		/*
+		 * for(int i=0;i<6;i++) { for(int j=0;j<4;j++) {
+		 * players[0].library.library[i][j]=new Tile(new Position(i,j), Color.WHITE); }
+		 * }
+		 */
+		
 		System.out.println("Players: ");
 
 		for (int i = 0; i < nPlayers; i++) {
