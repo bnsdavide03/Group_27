@@ -286,7 +286,7 @@ public class Player {
 				input = -1;
 
 			}
-			if(input>5 || input<=0) {
+			if (input > 5 || input <= 0) {
 				System.out.println("number not valid!\n");
 			}
 		} while (input > 5 || input <= 0);
@@ -326,9 +326,8 @@ public class Player {
 		return chair;
 	}
 
-	public int remove_adjacency(Library libreria, Position t1, Color c, int count) {
+	public int remove_adjacency(Library lib, Position t1, Color c, int count) {
 
-		Library lib = new Library(libreria);
 		if (t1.getX() + 1 < 6) {
 			if (lib.getTile(new Position(t1.getX() + 1, t1.getY())) != null) {
 				if (lib.getTile(new Position(t1.getX() + 1, t1.getY())).getColor() == c) {
@@ -370,15 +369,17 @@ public class Player {
 	}
 
 	public void verifyPlanceGoal() {
+		Library lib = new Library(this.library);
+
 		int count = 0;
 		int goalPoints = 0;
 		Color color[] = { Color.BLUE, Color.PINK, Color.L_BLUE, Color.GREEN, Color.YELLOW, Color.WHITE };
 		for (int j = 0; j < 6; j++) {
 			for (int i = 0; i < 6; i++) {
 				for (int k = 0; k < 5; k++) {
-					if (this.library.getTile(new Position(i, k)) != null
-							&& this.library.getTile(new Position(i, k)).getColor() == color[j]) {
-						count = remove_adjacency(this.library, new Position(i, k), color[j], count);
+					if (lib.getTile(new Position(i, k)) != null
+							&& lib.getTile(new Position(i, k)).getColor() == color[j]) {
+						count = remove_adjacency(lib, new Position(i, k), color[j], count);
 					}
 					if (count == 3) {
 						goalPoints = 2;

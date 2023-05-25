@@ -46,11 +46,11 @@ public class Main {
 			players[i] = new Player(name, i + 1, chair, arrayPersonalCardAvailable);
 
 		}
-		/*for(int i=0;i<6;i++) {
-			for(int j=0;j<4;j++) {
-				players[0].library.library[i][j]=new  Tile(new Position(i,j), Color.WHITE);
-			}
-		}*/
+		/*
+		 * for(int i=0;i<6;i++) { for(int j=0;j<4;j++) {
+		 * players[0].library.library[i][j]=new Tile(new Position(i,j), Color.WHITE); }
+		 * }
+		 */
 		System.out.println("Players: ");
 
 		for (int i = 0; i < nPlayers; i++) {
@@ -79,7 +79,7 @@ public class Main {
 				for (int j = 0; j < 100; ++j)
 					System.out.println();
 
-				System.out.println("It is "+players[i].getName() + "'s turn");
+				System.out.println("It is " + players[i].getName() + "'s turn");
 				System.out.println("-------------------------------------");
 				System.out.println("Map:");
 				m.visualmap();
@@ -126,7 +126,7 @@ public class Main {
 					System.out.println("Map updated!!");
 					System.out.println("-------------------------------------");
 				}
-				if (players[i].library.isFull()==true && game == true) {
+				if (players[i].library.isFull() == true && game == true) {
 					System.out.println("-------------------------------------");
 					System.out.println("you have finished your library for first");
 					System.out.println("-------------------------------------");
@@ -140,33 +140,29 @@ public class Main {
 
 				new java.util.Scanner(System.in).nextLine();
 			}
-			
+
 		}
-		for(i=0;i<nPlayers;i++)
-		{
+		for (i = 0; i < nPlayers; i++) {
 			players[i].addPoints(players[i].verifyPersonalCard());
 			players[i].verifyPlanceGoal();
 		}
 		System.out.println("GAME IS FINISHED WITH THIS RESULTS");
-		for(i=0;i<nPlayers;i++)
-		{
+		for (i = 0; i < nPlayers; i++) {
 			System.out.println("---------------------------------------");
-			System.out.println("Player "+players[i].getName());
-			System.out.println("Points "+players[i].getPoints());
+			System.out.println("Player " + players[i].getName());
+			System.out.println("Points " + players[i].getPoints());
 		}
 		System.out.println("---------------------------------------");
-		String WinnerName="";
-		int pointsMax=0;
-		for(i=0;i<nPlayers;i++)
-		{
-			if(players[i].getPoints()>pointsMax)
-			{
-				pointsMax=players[i].getPoints();
-				WinnerName=players[i].getName();
+		String WinnerName = "";
+		int pointsMax = 0;
+		for (i = 0; i < nPlayers; i++) {
+			if (players[i].getPoints() > pointsMax) {
+				pointsMax = players[i].getPoints();
+				WinnerName = players[i].getName();
 			}
 		}
-		System.out.println("THE WINNER IS "+WinnerName+" with "+pointsMax+" points");
-		
+		System.out.println("THE WINNER IS " + WinnerName + " with " + pointsMax + " points");
+
 		/*
 		 * Library lib=new Library(); lib.setTile(new Position(0,0), new Tile(new
 		 * Position (0,0), Color.YELLOW)); lib.setTile(new Position(1,0), new Tile(new
@@ -227,26 +223,23 @@ public class Main {
 		 * System.out.println(m.verifyMap()); m.visualmap(); System.out.println("");
 		 * 
 		 * Player player1=new Player("Davide");
-		 * System.out.println(player1.verifyPersonalCard());
-		 * lib.library[5][0]=new Tile(new Position(1,1),Color.BLUE);
-		 * lib.library[1][1]=new Tile(new Position(4,1),Color.BLUE);
-		 * lib.library[2][1]=new Tile(new Position(3,1),Color.L_BLUE);
-		 * lib.library[3][1]=new Tile(new Position(2,1),Color.BLUE);
-		 * lib.library[4][1]=new Tile(new Position(1,1),Color.GREEN);
-		 * lib.library[5][1]=new Tile(new Position(1,1),Color.BLUE);
-		 * lib.library[0][2]=new Tile(new Position(0,1),Color.BLUE);
-		 * lib.library[1][2]=new Tile(new Position(4,1),Color.PINK);
-		 * lib.library[1][3]=new Tile(new Position(4,1),Color.BLUE);
-		 * lib.library[2][3]=new Tile(new Position(3,1),Color.BLUE);
-		 * lib.library[3][3]=new Tile(new Position(2,1),Color.BLUE);
-		 * lib.library[4][3]=new Tile(new Position(1,1),Color.YELLOW);
-		 * lib.library[5][3]=new Tile(new Position(1,1),Color.PINK);
-		 * lib.library[0][4]=new Tile(new Position(0,1),Color.GREEN);
-		 * lib.visualLibrary();
-		 * Player pf=new Player(Gi,lib);
-		 * pf.verifyPlanceGoal();
-		 * lib.visualLibrary();
-		 * System.out.println(pf.getPoints()); 
+		 * System.out.println(player1.verifyPersonalCard()); lib.library[5][0]=new
+		 * Tile(new Position(1,1),Color.BLUE); lib.library[1][1]=new Tile(new
+		 * Position(4,1),Color.BLUE); lib.library[2][1]=new Tile(new
+		 * Position(3,1),Color.L_BLUE); lib.library[3][1]=new Tile(new
+		 * Position(2,1),Color.BLUE); lib.library[4][1]=new Tile(new
+		 * Position(1,1),Color.GREEN); lib.library[5][1]=new Tile(new
+		 * Position(1,1),Color.BLUE); lib.library[0][2]=new Tile(new
+		 * Position(0,1),Color.BLUE); lib.library[1][2]=new Tile(new
+		 * Position(4,1),Color.PINK); lib.library[1][3]=new Tile(new
+		 * Position(4,1),Color.BLUE); lib.library[2][3]=new Tile(new
+		 * Position(3,1),Color.BLUE); lib.library[3][3]=new Tile(new
+		 * Position(2,1),Color.BLUE); lib.library[4][3]=new Tile(new
+		 * Position(1,1),Color.YELLOW); lib.library[5][3]=new Tile(new
+		 * Position(1,1),Color.PINK); lib.library[0][4]=new Tile(new
+		 * Position(0,1),Color.GREEN); lib.visualLibrary(); Player pf=new
+		 * Player(Gi,lib); pf.verifyPlanceGoal(); lib.visualLibrary();
+		 * System.out.println(pf.getPoints());
 		 */
 
 	}

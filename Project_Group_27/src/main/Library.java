@@ -11,53 +11,32 @@ public class Library {
 			}
 		}
 	}
-	
-	public Library(Library l)
-    {
-        for(int i=0; i<6; i++)
-        {
-            for(int j=0; j<5; j++)
-            {
-            	if(l.getTile(new Position (i,j))!=null)
-            	{
-                if(l.getTile(new Position (i,j)).getColor()==Color.BLUE)
-                {
-                	library[i][j]=new Tile (new Position (i,j),Color.BLUE);
-                }
-                else if(l.getTile(new Position (i,j)).getColor()==Color.GREEN)
-                {
-                	library[i][j]=new Tile (new Position (i,j),Color.GREEN);
-                }
-                else if(l.getTile(new Position (i,j)).getColor()==Color.L_BLUE)
-                {
-                	library[i][j]=new Tile (new Position (i,j),Color.L_BLUE);
-                }
-                else if(l.getTile(new Position (i,j)).getColor()==Color.PINK)
-                {
-                	library[i][j]=new Tile (new Position (i,j),Color.PINK);
-                }
-                else if(l.getTile(new Position (i,j)).getColor()==Color.WHITE)
-                {
-                	library[i][j]=new Tile (new Position (i,j),Color.WHITE);
-                }
-                else if(l.getTile(new Position (i,j)).getColor()==Color.YELLOW)
-                {
-                	library[i][j]=new Tile (new Position (i,j),Color.YELLOW);
-                }
-                
-            	}
-                else 
-                {
-                	library[i][j]= null;
-                }
-            }
-        }
 
-    }
-	
-	
-	
-	
+	public Library(Library l) {
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (l.getTile(new Position(i, j)) != null) {
+					if (l.getTile(new Position(i, j)).getColor() == Color.BLUE) {
+						library[i][j] = new Tile(new Position(i, j), Color.BLUE);
+					} else if (l.getTile(new Position(i, j)).getColor() == Color.GREEN) {
+						library[i][j] = new Tile(new Position(i, j), Color.GREEN);
+					} else if (l.getTile(new Position(i, j)).getColor() == Color.L_BLUE) {
+						library[i][j] = new Tile(new Position(i, j), Color.L_BLUE);
+					} else if (l.getTile(new Position(i, j)).getColor() == Color.PINK) {
+						library[i][j] = new Tile(new Position(i, j), Color.PINK);
+					} else if (l.getTile(new Position(i, j)).getColor() == Color.WHITE) {
+						library[i][j] = new Tile(new Position(i, j), Color.WHITE);
+					} else if (l.getTile(new Position(i, j)).getColor() == Color.YELLOW) {
+						library[i][j] = new Tile(new Position(i, j), Color.YELLOW);
+					}
+
+				} else {
+					library[i][j] = null;
+				}
+			}
+		}
+
+	}
 
 	public Tile[][] getLibrary() {
 		return this.library;
@@ -102,10 +81,11 @@ public class Library {
 		}
 		System.out.println("");
 	}
+
 	public boolean isFull() {
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 5; j++) {
-				if(this.library[i][j]==null) {
+				if (this.library[i][j] == null) {
 					return false;
 				}
 			}
