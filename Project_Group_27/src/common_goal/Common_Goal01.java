@@ -16,8 +16,8 @@ import main.Position;
 public class Common_Goal01 extends Common_Goal {
 
 	/**
-	 * Costruttore per Common_Goal01
-	 * Costruisce un oggetto Common_Goal01 con il numero specificato di giocatori.
+	 * Costruttore per Common_Goal01 Costruisce un oggetto Common_Goal01 con il
+	 * numero specificato di giocatori.
 	 * 
 	 * @param nPlayers = numero di giocatori
 	 */
@@ -29,12 +29,12 @@ public class Common_Goal01 extends Common_Goal {
 
 	/**
 	 * Verifica se l'obiettivo è stato raggiunto nella libreria specificata.
-     *
-     * @param library la libreria di tessere da verificare
-     * 
-     * @return true se l'obiettivo è stato raggiunto, altrimenti false
+	 *
+	 * @param library = la libreria di tessere da verificare
+	 * 
+	 * @return true se l'obiettivo è stato raggiunto, altrimenti false
 	 */
-	
+
 	@Override
 	public boolean verify_goal(Library library) {
 

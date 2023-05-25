@@ -1,7 +1,7 @@
 
 /*
  * COMMON GOAL PADRE
- *  */
+ */
 
 package common_goal;
 
@@ -9,7 +9,6 @@ import main.Library;
 import main.Position;
 import main.Color;
 import main.Tile;
-
 
 /*
  * Classe astratta che rappresenta un obiettivo comune del gioco.
@@ -21,8 +20,8 @@ public abstract class Common_Goal {
 	protected int remaningCards[] = new int[4];
 
 	/**
-	 * Costruttore per la classe Common Goal
-	 * Costruisce un oggetto Common_Goal con il numero specificato di giocatori.
+	 * Costruttore per la classe Common Goal Costruisce un oggetto Common_Goal con
+	 * il numero specificato di giocatori.
 	 * 
 	 * @param nPlayers = numero di giocatori
 	 */
@@ -40,18 +39,19 @@ public abstract class Common_Goal {
 	}
 
 	/**
-	 * Rimuove le tessere adiacenti di un determinato colore dalla libreria, in modo ricorsivo dalla libreria
+	 * Rimuove le tessere adiacenti di un determinato colore dalla libreria, in modo
+	 * ricorsivo dalla libreria
 	 * 
 	 * @param library = libreria di tessere, o meglio Oggetto della libreria
 	 * 
-	 * @param t1 = la posizione della tessera
+	 * @param t1      = la posizione della tessera
 	 * 
-	 * @param c = il colore delle tessere da rimuovere
+	 * @param c       = il colore delle tessere da rimuovere
 	 * 
 	 * @return = la libreria modificata
 	 * 
 	 */
-	
+
 	public Library remove_adjacency(Library library, Position t1, Color c) {
 
 		if (t1.getX() + 1 < 6) {
@@ -91,7 +91,7 @@ public abstract class Common_Goal {
 		return library;
 
 	}
-	
+
 	/**
 	 * Verifica se l'obiettivo è stato raggiunto nella libreria
 	 * 
@@ -103,13 +103,12 @@ public abstract class Common_Goal {
 
 	public abstract boolean verify_goal(Library library);
 
-	
 	/**
 	 * Restituisce la descrizione dell'obiettivo
 	 * 
-	 * @return la descrizioen dell'obiettivo
+	 * @return la descrizione dell'obiettivo
 	 */
-	
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -119,7 +118,7 @@ public abstract class Common_Goal {
 	 * 
 	 * @return il numero di punti assegnati
 	 */
-	
+
 	public int givePoints() {
 		for (int i = 0; i < 4; i++) {
 			if (this.remaningCards[3 - i] != 0) {

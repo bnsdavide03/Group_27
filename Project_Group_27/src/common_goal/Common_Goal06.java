@@ -16,17 +16,23 @@ import main.Position;
 public class Common_Goal06 extends Common_Goal {
 
 	/**
-	 * Costruttore di Common_Goal06
-	 * Costruisce un oggetto Common_Goal06 con il numero specificato di giocatori.
+	 * Costruttore di Common_Goal06 Costruisce un oggetto Common_Goal06 con il
+	 * numero specificato di giocatori.
 	 * 
-	 * @param nPlayers
+	 * @param nPlayers = numero di giocatori.
 	 */
-	
+
 	public Common_Goal06(int nPlayers) {
 		super(nPlayers);
 		this.description = "Otto tessere dello stesso tipo. Non ci sono restrizioni sulla posizione di queste tessere";
-		// TODO Auto-generated constructor stub
 	}
+
+	/**
+	 * Verifica se l'obiettivo è stato raggiunto nella libreria specificata.
+	 *
+	 * @param library = la libreria di tessere da verificare
+	 * @return true se l'obiettivo è stato raggiunto, false altrimenti
+	 */
 
 	@Override
 	public boolean verify_goal(Library library) {

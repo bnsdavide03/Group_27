@@ -1,16 +1,37 @@
+
+/**COMMON GOAL n°10 figlia
+ * Obiettivo comune n°10.
+ * La classe Common_Goal10 rappresenta un obiettivo comune specifico in un gioco.
+ * Due righe formate ciascuna da 5 diversi tipi di tessere.
+ * Questa classe estende la classe Common_Goal.
+ */
+
 package common_goal;
 
 import main.Color;
 import main.Library;
 import main.Position;
 
-public class Common_Goal10 extends Common_Goal{
-	
+public class Common_Goal10 extends Common_Goal {
+
+	/**
+	 * Costruttore di Common_Goal10 Costruisce un oggetto Common_Goal10 con il
+	 * numero specificato di giocatori.
+	 * 
+	 * @param nPlayers = numero di giocatori.
+	 */
+
 	public Common_Goal10(int nPlayers) {
 		super(nPlayers);
-		this.description="Due righe formate ciascuna da 5 diversi tipi di tessere";
-		// TODO Auto-generated constructor stub
+		this.description = "Due righe formate ciascuna da 5 diversi tipi di tessere";
 	}
+
+	/**
+	 * Verifica se l'obiettivo è stato raggiunto nella libreria specificata.
+	 *
+	 * @param library = la libreria di tessere da verificare
+	 * @return true se l'obiettivo è stato raggiunto, false altrimenti
+	 */
 
 	@Override
 	public boolean verify_goal(Library library) {
@@ -38,10 +59,10 @@ public class Common_Goal10 extends Common_Goal{
 					break;
 				}
 			}
-			//se uno è 0, lo mettiamo a uno per far funzionare l'if sottostante, se invece due sono a 0 ritornerà false
-			for(int n=0;n<6;n++) {
-				if(array[n]==0)
-				{
+			// se uno è 0, lo mettiamo a uno per far funzionare l'if sottostante, se invece
+			// due sono a 0 ritornerà false
+			for (int n = 0; n < 6; n++) {
+				if (array[n] == 0) {
 					array[n]++;
 					break;
 				}
@@ -58,4 +79,3 @@ public class Common_Goal10 extends Common_Goal{
 	}
 
 }
-

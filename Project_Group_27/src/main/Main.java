@@ -5,7 +5,19 @@ import common_goal.*;
 import java.security.SecureRandom;
 import java.util.Scanner;
 
+/**
+ * La classe Main rappresenta il punto di ingresso del programma. Gestisce
+ * l'inizializzazione dei giocatori, l'estrazione degli obiettivi comuni e il
+ * loop di gioco.
+ */
+
 public class Main {
+
+	/**
+	 * Il metodo main è il punto di ingresso del programma.
+	 * 
+	 * @param args = Gli argomenti della riga di comando.
+	 */
 
 	public static void main(String[] args) {
 		int[] arrayPersonalCardAvailable = new int[12];
@@ -46,11 +58,7 @@ public class Main {
 			players[i] = new Player(name, i + 1, chair, arrayPersonalCardAvailable);
 
 		}
-		/*for(int i=0;i<6;i++) {
-			for(int j=0;j<4;j++) {
-				players[0].library.library[i][j]=new  Tile(new Position(i,j), Color.WHITE);
-			}
-		}*/
+
 		System.out.println("Players: ");
 
 		for (int i = 0; i < nPlayers; i++) {
@@ -79,7 +87,7 @@ public class Main {
 				for (int j = 0; j < 100; ++j)
 					System.out.println();
 
-				System.out.println("It is "+players[i].getName() + "'s turn");
+				System.out.println("It is " + players[i].getName() + "'s turn");
 				System.out.println("-------------------------------------");
 				System.out.println("Map:");
 				m.visualmap();
@@ -126,7 +134,7 @@ public class Main {
 					System.out.println("Map updated!!");
 					System.out.println("-------------------------------------");
 				}
-				if (players[i].library.isFull()==true && game == true) {
+				if (players[i].library.isFull() == true && game == true) {
 					System.out.println("-------------------------------------");
 					System.out.println("you have finished your library for first");
 					System.out.println("-------------------------------------");
@@ -140,116 +148,38 @@ public class Main {
 
 				new java.util.Scanner(System.in).nextLine();
 			}
-			
+
 		}
-		for(i=0;i<nPlayers;i++)
-		{
+		for (i = 0; i < nPlayers; i++) {
 			players[i].addPoints(players[i].verifyPersonalCard());
 			players[i].verifyPlanceGoal();
 		}
 		System.out.println("GAME IS FINISHED WITH THIS RESULTS");
-		for(i=0;i<nPlayers;i++)
-		{
+		for (i = 0; i < nPlayers; i++) {
 			System.out.println("---------------------------------------");
-			System.out.println("Player "+players[i].getName());
-			System.out.println("Points "+players[i].getPoints());
+			System.out.println("Player " + players[i].getName());
+			System.out.println("Points " + players[i].getPoints());
 		}
 		System.out.println("---------------------------------------");
-		String WinnerName="";
-		int pointsMax=0;
-		for(i=0;i<nPlayers;i++)
-		{
-			if(players[i].getPoints()>pointsMax)
-			{
-				pointsMax=players[i].getPoints();
-				WinnerName=players[i].getName();
+		String WinnerName = "";
+		int pointsMax = 0;
+		for (i = 0; i < nPlayers; i++) {
+			if (players[i].getPoints() > pointsMax) {
+				pointsMax = players[i].getPoints();
+				WinnerName = players[i].getName();
 			}
 		}
-		System.out.println("THE WINNER IS "+WinnerName+" with "+pointsMax+" points");
-		
-		/*
-		 * Library lib=new Library(); lib.setTile(new Position(0,0), new Tile(new
-		 * Position (0,0), Color.YELLOW)); lib.setTile(new Position(1,0), new Tile(new
-		 * Position (1,0), Color.YELLOW)); lib.setTile(new Position(2,0), new Tile(new
-		 * Position (2,0), Color.LIGHT_BLUE)); lib.setTile(new Position(3,0), new
-		 * Tile(new Position (3,0), Color.YELLOW)); lib.setTile(new Position(4,0), new
-		 * Tile(new Position (4,0), Color.LIGHT_BLUE)); lib.setTile(new Position(5,0),
-		 * new Tile(new Position (5,0), Color.PINK)); lib.setTile(new Position(0,1), new
-		 * Tile(new Position (0,1), Color.PINK)); lib.setTile(new Position(1,1), new
-		 * Tile(new Position (1,1), Color.BLUE)); lib.setTile(new Position(2,1), new
-		 * Tile(new Position (2,1), Color.LIGHT_BLUE)); lib.setTile(new Position(3,1),
-		 * new Tile(new Position (3,1), Color.PINK)); lib.setTile(new Position(4,1), new
-		 * Tile(new Position (4,1), Color.LIGHT_BLUE)); lib.setTile(new Position(5,1),
-		 * new Tile(new Position (5,1), Color.WHITE)); lib.setTile(new Position(0,2),
-		 * new Tile(new Position (0,2), Color.PINK)); lib.setTile(new Position(1,2), new
-		 * Tile(new Position (1,2), Color.BLUE)); lib.setTile(new Position(2,2), new
-		 * Tile(new Position (2,2), Color.LIGHT_BLUE)); lib.setTile(new Position(3,2),
-		 * new Tile(new Position (3,2), Color.BLUE)); lib.setTile(new Position(4,2), new
-		 * Tile(new Position (4,2), Color.LIGHT_BLUE)); lib.setTile(new Position(5,2),
-		 * new Tile(new Position (5,2), Color.YELLOW)); lib.setTile(new Position(0,3),
-		 * new Tile(new Position (0,3), Color.PINK)); lib.setTile(new Position(1,3), new
-		 * Tile(new Position (1,3), Color.WHITE)); lib.setTile(new Position(2,3), new
-		 * Tile(new Position (2,3), Color.LIGHT_BLUE)); lib.setTile(new Position(3,3),
-		 * new Tile(new Position (3,3), Color.WHITE)); lib.setTile(new Position(4,3),
-		 * new Tile(new Position (4,3), Color.LIGHT_BLUE)); lib.setTile(new
-		 * Position(5,3), new Tile(new Position (5,3), Color.LIGHT_BLUE));
-		 * lib.setTile(new Position(0,4), new Tile(new Position (0,4),
-		 * Color.LIGHT_BLUE)); lib.setTile(new Position(1,4), new Tile(new Position
-		 * (1,4), Color.BLUE)); lib.setTile(new Position(2,4), new Tile(new Position
-		 * (2,4), Color.BLUE)); lib.setTile(new Position(3,4), new Tile(new Position
-		 * (3,4), Color.BLUE)); lib.setTile(new Position(4,4), new Tile(new Position
-		 * (4,4), Color.BLUE)); lib.setTile(new Position(5,4), new Tile(new Position
-		 * (5,4), Color.WHITE)); lib.visualLibrary(); Common_Goal goal = new
-		 * Common_Goal03(4); System.out.println(goal.verify_goal(lib));
-		 */
-
-		/*
-		 * Tile t= new Tile(); System.out.println(t.getP());
-		 * System.out.println(t.getColor());
-		 */
-		/*
-		 * Map m=new Map(nPlayers); m.visualmap(); System.out.println(m.verifyMap());
-		 * m.takeTile(1, 4);
-		 */
-
-		/*
-		 * Library lib=new Library();
-		 * 
-		 * 
-		 * 
-		 * 
-		 * >>>>>>> branch 'main' of https://github.com/bnsdavide03/Group_27.git
-		 * System.out.println(goal.verify_goal(lib)); /*Common_Goal03 gol = new
-		 * Common_Goal03(2); System.out.println(gol.getDescription());
-		 * gol.getRemaningCards();/* Map m=new Map(4); m.map[5][5]= new Tile(new
-		 * Position(5, 5), Color.BLUE); m.map[5][6]= new Tile(new Position(5, 6),
-		 * Color.BLUE); System.out.println(m.verifyMap()); m.map[5][6]= new Tile();
-		 * System.out.println(m.verifyMap()); m.visualmap(); System.out.println("");
-		 * 
-		 * Player player1=new Player("Davide");
-		 * System.out.println(player1.verifyPersonalCard());
-		 * lib.library[5][0]=new Tile(new Position(1,1),Color.BLUE);
-		 * lib.library[1][1]=new Tile(new Position(4,1),Color.BLUE);
-		 * lib.library[2][1]=new Tile(new Position(3,1),Color.L_BLUE);
-		 * lib.library[3][1]=new Tile(new Position(2,1),Color.BLUE);
-		 * lib.library[4][1]=new Tile(new Position(1,1),Color.GREEN);
-		 * lib.library[5][1]=new Tile(new Position(1,1),Color.BLUE);
-		 * lib.library[0][2]=new Tile(new Position(0,1),Color.BLUE);
-		 * lib.library[1][2]=new Tile(new Position(4,1),Color.PINK);
-		 * lib.library[1][3]=new Tile(new Position(4,1),Color.BLUE);
-		 * lib.library[2][3]=new Tile(new Position(3,1),Color.BLUE);
-		 * lib.library[3][3]=new Tile(new Position(2,1),Color.BLUE);
-		 * lib.library[4][3]=new Tile(new Position(1,1),Color.YELLOW);
-		 * lib.library[5][3]=new Tile(new Position(1,1),Color.PINK);
-		 * lib.library[0][4]=new Tile(new Position(0,1),Color.GREEN);
-		 * lib.visualLibrary();
-		 * Player pf=new Player(Gi,lib);
-		 * pf.verifyPlanceGoal();
-		 * lib.visualLibrary();
-		 * System.out.println(pf.getPoints()); 
-		 */
+		System.out.println("THE WINNER IS " + WinnerName + " with " + pointsMax + " points");
 
 	}
+
+	/**
+	 * Estrae gli obiettivi comuni in base al numero di giocatori e li assegna
+	 * all'array fornito.
+	 *
+	 * @param common_goals = L'array in cui inserire gli obiettivi comuni estratti.
+	 * @param nPlayers     = Il numero di giocatori.
+	 */
 
 	public static void extractCommonGoal(Common_Goal common_goals[], int nPlayers) {
 		SecureRandom rand = new SecureRandom();

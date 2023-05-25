@@ -2,6 +2,10 @@ package main;
 
 import java.util.Random;
 
+/**
+ * La classe Map rappresenta la mappa di gioco composta da tessere.
+ */
+
 public class Map {
 	private Tile[][] map = new Tile[9][9];
 	private int blue_card = 22;
@@ -10,6 +14,12 @@ public class Map {
 	private int pink = 22;
 	private int yellow = 22;
 	private int green = 22;
+
+	/**
+	 * Costruisce un oggetto Map con il numero specificato di giocatori.
+	 *
+	 * @param n_players = il numero di giocatori nella partita
+	 */
 
 	public Map(int n_players) {
 		// put new Tile() to the position we never need
@@ -72,8 +82,13 @@ public class Map {
 				map[8][5] = new Tile();
 			}
 		}
-		fillMap(); //use function fillMap() to fill the map
+		fillMap(); // use function fillMap() to fill the map
 	}
+
+	/**
+	 * Riempie la mappa con delle tessere casuali in base al conteggio delle carte
+	 * disponibili.
+	 */
 
 	void fillMap() {
 		Random rand = new Random();
@@ -148,114 +163,145 @@ public class Map {
 
 	}
 
+	/**
+	 * Verifica che la mappa abbia per ogni tessera una tessera adiacente valida.
+	 *
+	 * @return 1 se la mappa è valida e può essere giocata, 0 altrimenti
+	 */
+
 	int verifyMap() {
 		for (int i = 0; i < 8; i++) {
 			for (int k = 0; k < 8; k++) {
-				if(this.map[i][k]!=null) {
-					if(this.map[i][k].getP().getX()!=-1) {
-						if(this.map[i+1][k]!=null && this.map[i+1][k].getP().getX()!=-1 ) {     // for each tile of the map check if the right one or the bottom one is not empty
+				if (this.map[i][k] != null) {
+					if (this.map[i][k].getP().getX() != -1) {
+						if (this.map[i + 1][k] != null && this.map[i + 1][k].getP().getX() != -1) { // for each tile of
+																									// the map check if
+																									// the right one or
+																									// the bottom one is
+																									// not empty
 							return 0;
 						}
-						if(this.map[i][k+1]!=null && this.map[i][k+1].getP().getX()!=-1 ) {
+						if (this.map[i][k + 1] != null && this.map[i][k + 1].getP().getX() != -1) {
 							return 0;
 						}
 					}
 				}
 			}
 		}
-		fillMap();  // if we can't take more than one tile fill the map
+		fillMap(); // if we can't take more than one tile fill the map
 		return 1;
 	}
 
+	/**
+	 * Restituisce la mappa.
+	 *
+	 * @return la mappa come un array bidimensionale di tessere
+	 */
+
 	Tile[][] getMap() {
-		
+
 		return this.map;
 	}
 
+	/**
+	 * Stampa una rappresentazione visuale della mappa.
+	 */
+
 	public void visualmap() {
-		
+
 		System.out.print("\t");
-		
+
 		for (int j = 0; j < 9; j++) {
-			
+
 			System.out.print(j + "\t");
-			
+
 		}
-		
+
 		System.out.println();
-		
+
 		for (int i = 0; i < 9; i++) {
-			
+
 			System.out.print(i + "\t");
-			
+
 			for (int k = 0; k < 9; k++) {
-				if(i < 9 && k < 9 && map[i][k]!=null)
-				{
-					if(map[i][k].getP().getX()!=-1)
-					{
-						if(map[i][k].getColor()==Color.BLUE)
-						{
-							System.out.print("\u001B[34m"+map[i][k].getColor() + "\033[0m\t\t");
+				if (i < 9 && k < 9 && map[i][k] != null) {
+					if (map[i][k].getP().getX() != -1) {
+						if (map[i][k].getColor() == Color.BLUE) {
+							System.out.print("\u001B[34m" + map[i][k].getColor() + "\033[0m\t\t");
+						} else if (map[i][k].getColor() == Color.GREEN) {
+							System.out.print("\u001B[32m" + map[i][k].getColor() + "\033[0m\t\t");
+						} else if (map[i][k].getColor() == Color.L_BLUE) {
+							System.out.print("\u001B[36m" + map[i][k].getColor() + "\033[0m\t\t");
+						} else if (map[i][k].getColor() == Color.PINK) {
+							System.out.print("\u001B[35m" + map[i][k].getColor() + "\033[0m\t\t");
+						} else if (map[i][k].getColor() == Color.WHITE) {
+							System.out.print("\u001B[37m" + map[i][k].getColor() + "\033[0m\t\t");
+						} else if (map[i][k].getColor() == Color.YELLOW) {
+							System.out.print("\u001B[33m" + map[i][k].getColor() + "\033[0m\t\t");
 						}
-						else if(map[i][k].getColor()==Color.GREEN)
-						{
-							System.out.print("\u001B[32m"+map[i][k].getColor() + "\033[0m\t\t");
-						}
-						else if(map[i][k].getColor()==Color.L_BLUE)
-						{
-							System.out.print("\u001B[36m"+map[i][k].getColor() + "\033[0m\t\t");
-						}
-						else if(map[i][k].getColor()==Color.PINK)
-						{
-							System.out.print("\u001B[35m"+map[i][k].getColor() + "\033[0m\t\t");
-						}
-						else if(map[i][k].getColor()==Color.WHITE)
-						{
-							System.out.print("\u001B[37m"+map[i][k].getColor() + "\033[0m\t\t");
-						}
-						else if(map[i][k].getColor()==Color.YELLOW)
-						{
-							System.out.print("\u001B[33m"+map[i][k].getColor() + "\033[0m\t\t");
-						}
-					}
-					else
-					{
+					} else {
 						System.out.print("---\t");
 					}
 
-				}
-				else
-				{
+				} else {
 					System.out.print("---\t");
 				}
-				
-			
+
 			}
 			System.out.println();
 		}
 	}
+
+	/**
+	 * Verifica se la tessera selezionata alla posizione specificata è valida.
+	 *
+	 * @param position = la posizione della tessera da verificare
+	 * @return true se la tessera è valida, false altrimenti
+	 */
+
 	public boolean verifyTile(Position position) {
-		if(this.map[position.getX()][position.getY()]==null || this.map[position.getX()][position.getY()].getTile()==-1) {
+		if (this.map[position.getX()][position.getY()] == null
+				|| this.map[position.getX()][position.getY()].getTile() == -1) {
 			System.out.println("Invalid selection: no tile found.");
 			return false;
 		}
-		if((position.getX()==0 && position.getY()==3) || (position.getX()==0 && position.getY()==4) || (position.getX()==5 && position.getY()==0) || (position.getX()==4 && position.getY()==0) || (position.getX()==3 && position.getY()==8) || (position.getX()==4 && position.getY()==8) || (position.getX()== 8 && position.getY()==5) || (position.getX()==8 && position.getY()==4)) {
+		if ((position.getX() == 0 && position.getY() == 3) || (position.getX() == 0 && position.getY() == 4)
+				|| (position.getX() == 5 && position.getY() == 0) || (position.getX() == 4 && position.getY() == 0)
+				|| (position.getX() == 3 && position.getY() == 8) || (position.getX() == 4 && position.getY() == 8)
+				|| (position.getX() == 8 && position.getY() == 5) || (position.getX() == 8 && position.getY() == 4)) {
 			return true;
 		}
-		if(this.map[position.getX()+1][position.getY()]==null || this.map[position.getX()-1][position.getY()]==null || this.map[position.getX()][position.getY()+1]==null || this.map[position.getX()][position.getY()-1]==null || this.map[position.getX()+1][position.getY()].getTile() == -1 || this.map[position.getX()-1][position.getY()].getTile() == -1|| this.map[position.getX()][position.getY()+1].getTile() == -1|| this.map[position.getX()][position.getY()-1].getTile() == -1 ) {
+		if (this.map[position.getX() + 1][position.getY()] == null
+				|| this.map[position.getX() - 1][position.getY()] == null
+				|| this.map[position.getX()][position.getY() + 1] == null
+				|| this.map[position.getX()][position.getY() - 1] == null
+				|| this.map[position.getX() + 1][position.getY()].getTile() == -1
+				|| this.map[position.getX() - 1][position.getY()].getTile() == -1
+				|| this.map[position.getX()][position.getY() + 1].getTile() == -1
+				|| this.map[position.getX()][position.getY() - 1].getTile() == -1) {
 			return true;
 		}
 		System.out.println("Invalid tile");
 		return false;
 	}
 
+	/**
+	 * Restituisce la tessera alla posizione specificata.
+	 *
+	 * @param p = la posizione della tessera
+	 * @return la tessera alla posizione specificata
+	 */
 
-	public Tile getTile(Position p)
-	{
+	public Tile getTile(Position p) {
 		return this.map[p.getX()][p.getY()];
 	}
 
-	
+	/**
+	 * Rimuove la tessera alla posizione specificata dalla mappa.
+	 *
+	 * @param position = la posizione della tessera da rimuovere
+	 */
+
 	public void takeTile(Position position) {
 		this.map[position.getX()][position.getY()] = null;
 	}

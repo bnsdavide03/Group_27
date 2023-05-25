@@ -1,10 +1,18 @@
 package main;
 
+/**
+ * La classe Library rappresenta una libreria che contiene tile.
+ */
+
 public class Library {
 	private Tile library[][] = new Tile[6][5];
 
+	/**
+	 * Costruttore di Library. Crea una libreria vuota.
+	 */
+
 	public Library() {
-		// create the empty library
+		// crea una libreria vuota
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 5; j++) {
 				this.library[i][j] = null;
@@ -12,21 +20,51 @@ public class Library {
 		}
 	}
 
+	/**
+	 * Restituisce la libreria.
+	 *
+	 * @return La matrice di tile che rappresenta la libreria.
+	 */
+
 	public Tile[][] getLibrary() {
 		return this.library;
 	}
+
+	/**
+	 * Restituisce il tile alla posizione specificata.
+	 *
+	 * @param p = La posizione del tile da restituire.
+	 * @return Il tile alla posizione specificata.
+	 */
 
 	public Tile getTile(Position p) {
 		return this.library[p.getX()][p.getY()];
 	}
 
+	/**
+	 * Imposta il tile alla posizione specificata nella libreria.
+	 *
+	 * @param p    = La posizione in cui impostare il tile.
+	 * @param tile = Il tile da impostare.
+	 */
+
 	public void setTile(Position p, Tile tile) {
 		library[p.getX()][p.getY()] = tile;
 	}
 
+	/**
+	 * Imposta la libreria con una nuova matrice di tile.
+	 *
+	 * @param library = La nuova matrice di tile per la libreria.
+	 */
+
 	public void setLibrary(Tile[][] library) {
 		this.library = library;
 	}
+
+	/**
+	 * Visualizza la libreria, mostrando i tile presenti con i rispettivi colori.
+	 */
 
 	public void visualLibrary() {
 		for (int i = 0; i < 6; i++) {
@@ -55,10 +93,18 @@ public class Library {
 		}
 		System.out.println("");
 	}
+
+	/**
+	 * Verifica se la libreria è piena, cioè se tutti gli slot sono occupati da
+	 * tile.
+	 * 
+	 * @return true se la libreria è piena, altrimenti false.
+	 */
+
 	public boolean isFull() {
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 5; j++) {
-				if(this.library[i][j]==null) {
+				if (this.library[i][j] == null) {
 					return false;
 				}
 			}

@@ -16,8 +16,8 @@ import main.Tile;
 public class Common_Goal03 extends Common_Goal {
 
 	/**
-	 * Costruttore per Common_Goal03
-	 * Costruisce un oggetto Common_Goal03 con il numero specificato di giocatori.
+	 * Costruttore per Common_Goal03 Costruisce un oggetto Common_Goal03 con il
+	 * numero specificato di giocatori.
 	 * 
 	 * @param nPlayers
 	 */
@@ -26,6 +26,13 @@ public class Common_Goal03 extends Common_Goal {
 		super(nPlayers);
 		this.description = "quattro gruppi separati formati ciascuno da quattro tessere adiacenti dello stesso tipo. Le tessere di un gruppo possono essere diverse da quelle di un altro gruppo.";
 	}
+
+	/**
+	 * Verifica se l'obiettivo è stato raggiunto nella libreria specificata.
+	 *
+	 * @param library = la libreria di tessere da verificare
+	 * @return true se l'obiettivo è stato raggiunto, altrimenti false
+	 */
 
 	@Override
 	public boolean verify_goal(Library library) {

@@ -1,3 +1,11 @@
+
+/**COMMON GOAL n°9 figlia
+ * Obiettivo comune n°9.
+ * La classe Common_Goal09 rappresenta un obiettivo comune specifico in un gioco.
+ * Due colonne formate ciascuna da 6 diversi tipi di tessere
+ * Questa classe estende la classe Common_Goal.
+ */
+
 package common_goal;
 
 import main.Color;
@@ -6,11 +14,24 @@ import main.Position;
 
 public class Common_Goal09 extends Common_Goal {
 
+	/**
+	 * Costruttore di Common_Goal09 Costruisce un oggetto Common_Goal09 con il
+	 * numero specificato di giocatori.
+	 * 
+	 * @param nPlayers = numero di giocatori.
+	 */
+
 	public Common_Goal09(int nPlayers) {
 		super(nPlayers);
 		this.description = "due colonne formate ciascuna da 6 diversi tipi di tessere";
-		// TODO Auto-generated constructor stub
 	}
+
+	/**
+	 * Verifica se l'obiettivo è stato raggiunto nella libreria specificata.
+	 *
+	 * @param library = la libreria di tessere da verificare
+	 * @return true se l'obiettivo è stato raggiunto, false altrimenti
+	 */
 
 	@Override
 	public boolean verify_goal(Library library) {

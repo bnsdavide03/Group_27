@@ -1,3 +1,8 @@
+
+/*
+ * PERSONAL CARD PADRE
+ */
+
 package personal_card;
 
 import java.util.ArrayList;
@@ -7,12 +12,26 @@ import main.Map;
 import main.Position;
 import main.Tile;
 
+/**
+ * classe astratta Personal Card che rappresenta una carta personale.
+ */
+
 public abstract class Personal_Card {
-	protected ArrayList<Tile> position = new ArrayList<Tile>();
+	protected ArrayList<Tile> position = new ArrayList<Tile>(); // lista di tile che rappresentano le posizioni sulla libreria.
+
+	/**
+	 * Restituisce la lista di tile che rappresentano le posizioni sulla libreria.
+	 *
+	 * @return La lista di tile che rappresentano le posizioni sulla libreria.
+	 */
 
 	public ArrayList<Tile> get_color_position() {
 		return this.position;
 	}
+
+	/**
+	 * Visualizza la carta personale impostando le tile in una libreria e mostrandola.
+	 */
 
 	public void Visual_Personal_Card() {
 		Library library = new Library();
@@ -21,38 +40,4 @@ public abstract class Personal_Card {
 		}
 		library.visualLibrary();
 	}
-
-	/*public int calcolaPunti(Map map) {
-		int count = 0;
-		for (int i = 0; i < 6; i++) {
-			if (position.get(i)
-					.getColor() == (map
-							.getTile(new Position(position.get(i).getP().getX(), position.get(i).getP().getY())))
-							.getColor()) {
-				count++;
-			}
-		}
-		switch (count) {
-		case 1:
-			return 1;
-
-		case 2:
-			return 2;
-
-		case 3:
-			return 4;
-
-		case 4:
-			return 6;
-
-		case 5:
-			return 9;
-
-		case 6:
-			return 12;
-
-		}
-		return 0;
-	}*/
-
 }

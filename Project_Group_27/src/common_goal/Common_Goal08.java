@@ -1,3 +1,12 @@
+
+/**COMMON GOAL n°8 figlia
+ * Obiettivo comune n°8.
+ * La classe Common_Goal08 rappresenta un obiettivo comune specifico in un gioco.
+ * Quattro righe formate ciascuna da 5 tessere di uno, due o tre tipi differenti. 
+ * Righe diverse possono avere combinazioni diverse di tipi di tessere.
+ * Questa classe estende la classe Common_Goal.
+ */
+
 package common_goal;
 
 import main.Color;
@@ -5,13 +14,26 @@ import main.Library;
 import main.Position;
 import main.Tile;
 
-public class Common_Goal08 extends Common_Goal{
-	
+public class Common_Goal08 extends Common_Goal {
+
+	/**
+	 * Costruttore di Common_Goal08 Costruisce un oggetto Common_Goal08 con il
+	 * numero specificato di giocatori.
+	 * 
+	 * @param nPlayers = numero di giocatori.
+	 */
+
 	public Common_Goal08(int nPlayers) {
 		super(nPlayers);
-		this.description="Quattro righe formate ciascuna da 5 tessere di uno, due o tre tipi differenti. Righe diverse possono avere combinazioni diverse di tipi di tessere";
-		// TODO Auto-generated constructor stub
+		this.description = "Quattro righe formate ciascuna da 5 tessere di uno, due o tre tipi differenti. Righe diverse possono avere combinazioni diverse di tipi di tessere";
 	}
+
+	/**
+	 * Verifica se l'obiettivo è stato raggiunto nella libreria specificata.
+	 *
+	 * @param library = la libreria di tessere da verificare
+	 * @return true se l'obiettivo è stato raggiunto, false altrimenti
+	 */
 
 	@Override
 	public boolean verify_goal(Library library) {

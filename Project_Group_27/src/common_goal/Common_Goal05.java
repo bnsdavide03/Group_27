@@ -17,12 +17,12 @@ import main.Tile;
 public class Common_Goal05 extends Common_Goal {
 
 	/**
-	 * Costruttore per Common_Goal05
-	 * Costruisce un oggetto Common_Goal05 con il numero specificato di giocatori.
+	 * Costruttore per Common_Goal05 Costruisce un oggetto Common_Goal05 con il
+	 * numero specificato di giocatori.
 	 * 
 	 * @param nPlayers = numero di giocatori
 	 */
-	
+
 	public Common_Goal05(int nPlayers) {
 		super(nPlayers);
 		this.description = "Tre colonne formate ciscuna da 6 tessere di uno, due o tre tipi differenti. Colonne diverse possono avere combinazioni diverse di tipi di tessere";
@@ -34,7 +34,7 @@ public class Common_Goal05 extends Common_Goal {
 	 * @param library = la libreria da verificare.
 	 * @return true se l'obiettivo è stato raggiunto, false altrimenti.
 	 */
-	
+
 	@Override
 	public boolean verify_goal(Library library) {
 		// library 6x5
