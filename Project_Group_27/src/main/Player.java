@@ -292,7 +292,7 @@ public class Player {
 		{
 			System.out.println("la pos"+p1[i].getX()+p1[i].getY());
 		}*/
-		System.out.println("inserisci la colonna da 1 a 5");
+		System.out.println("insert the column from 1 to 5");
 		Scanner sc = new Scanner(System.in);
 		boolean verifica_colonna = false;
 		int input = 0;
@@ -303,34 +303,41 @@ public class Player {
 				input = input - 1;
 			}
 		}
+		int i = 5;
+		while (this.library.getTile(new Position(i, input)) != null) {
+		i = i - 1;
+		}
 		try {
 			// cerca prima riga libera
-			int i = 5;
-			while (this.library.getTile(new Position(i, input)) != null) {
-				i = i - 1;
-			}
+			
+			
 			for (int f = 0; f < p1.length; f++) {
 				this.library.setTile(new Position(i - f, input), map.getTile(p1[f]));
 			}
+			for(int j = 0; j < p1.length; j++) {
+				map.takeTile(p1[j]);
+			}
 		} catch (Exception e) {
+			for (int f = 0; f < p1.length; f++) {
+				this.library.setTile(new Position(i - f, input), null);
+			}
 			System.out.println("Not enough space in the selected column");
-			chooseTile(map, nPlayers);
+			while (chooseTile(map, nPlayers)==false);
+			
 		}
 
 		/// il codice potrebbe crascare inserire eccezione
 
-		for(int j = 0; j < p1.length; j++) {
-			map.takeTile(p1[j]);
-		}
+		
 
 	}
 
 	public boolean isChair() {
 		return chair;
 	}
-	public int remove_adjacency(Library lib, Position t1, Color c,int count) {
-
-
+	public int remove_adjacency(Library libreria, Position t1, Color c,int count) {
+		
+		Library lib= new Library (libreria);
 		if (t1.getX() + 1 < 6) {
 			if (lib.getTile(new Position(t1.getX() + 1, t1.getY())) != null) {
 				if (lib.getTile(new Position(t1.getX() + 1, t1.getY())).getColor() == c) {
