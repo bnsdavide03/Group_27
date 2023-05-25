@@ -1,3 +1,12 @@
+
+/**COMMON GOAL n°4 figlia
+ * Obiettivo comune n°4.
+ * La classe Common_Goal04 rappresenta un obiettivo comune specifico in un gioco.
+ * L'obiettivo consiste nel formare due gruppi separati di 4 tessere dello stesso tipo che formano un quadrato 2x2. 
+ * Le tessere dei due gruppo devono essere dello stesso tipo.
+ * Questa classe estende la classe Common_Goal.
+ */
+
 package common_goal;
 
 import main.Library;
@@ -6,10 +15,17 @@ import main.Tile;
 import main.Color;
 
 public class Common_Goal04 extends Common_Goal{
-	
+
+	/**
+	 * Costruttore per Common_Goal04
+	 * Costruisce un oggetto Common_Goal04 con il numero specificato di giocatori.
+	 * 
+	 * @param nPlayers
+	 */
+
 	public Common_Goal04(int nPlayers) {
 		super(nPlayers);
-		this.description="Due gruppi separati di 4 tessere dello stesso tipo che formano un quadrato 2x2. Le tessere dei due gruppo devono essere dello stesso  tipo";
+		this.description="Due gruppi separati di 4 tessere dello stesso tipo che formano un quadrato 2x2. Le tessere dei due gruppo devono essere dello stesso tipo";
 		// TODO Auto-generated constructor stub
 	}
 
