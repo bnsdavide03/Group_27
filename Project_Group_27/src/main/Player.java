@@ -14,7 +14,6 @@ public class Player {
 	private Personal_Card personalCard;
 	Library library;
 
-
 	public Player(String name, int id, boolean chair, int[] arrayPersonalCardAvailable) {
 		this.name = name;
 		this.chair = chair;
@@ -81,16 +80,16 @@ public class Player {
 	}
 
 	public void addPoints(int points) {
-		this.points+=points;
+		this.points += points;
 	}
 
 	public String getName() {
 		return this.name;
 	}
 
-	/*public int calculateTotalPoints() {
-		return this.points;
-	}*/
+	/*
+	 * public int calculateTotalPoints() { return this.points; }
+	 */
 
 	void setChairTrue() {
 		this.chair = true;
@@ -113,10 +112,10 @@ public class Player {
 	 * 
 	 * }
 	 */
-	public boolean chooseTile(Map map,int nPlayers) {
+	public boolean chooseTile(Map map, int nPlayers) {
 		int choice;
 
-		Scanner sc= new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 
 		do {
 			System.out.println("How many tiles do you want to take? Enter a number from 1 to 3");
@@ -130,15 +129,15 @@ public class Player {
 				System.out.println("Number not valid! Insert a number between 1 and 3\n");
 			}
 		} while (choice > 3 || choice <= 0);
-       
-		Position pos [] = new Position [choice];
+
+		Position pos[] = new Position[choice];
 		int x, y;
 
 		// CHIEDERE ALLA PROFE
 
-		for(int i=0;i<choice;i++) {
+		for (int i = 0; i < choice; i++) {
 
-			System.out.println("Enter coordinates of tile: "+(i+1));
+			System.out.println("Enter coordinates of tile: " + (i + 1));
 			do {
 				System.out.println("\tEnter row value: ");
 				try {
@@ -147,11 +146,11 @@ public class Player {
 					x = -1;
 				}
 
-				if (x >8 || x < 0) {
+				if (x > 8 || x < 0) {
 					System.out.println("Number not valid! Insert a number from 0 to 9\n");
 				}
-			} while ((x > 8 || x <0));
-			
+			} while ((x > 8 || x < 0));
+
 			do {
 				System.out.println("\tEnter column value: ");
 				try {
@@ -160,33 +159,33 @@ public class Player {
 					y = -1;
 				}
 
-				if (y >8 || y<0) {
+				if (y > 8 || y < 0) {
 					System.out.println("Number not valid! Insert a number from 0 to 9\n");
 				}
-			} while ((y>8 || y <0));
-			pos[i] = new Position (x,y);
+			} while ((y > 8 || y < 0));
+			pos[i] = new Position(x, y);
 
-			if(!map.verifyTile(pos[i])) {
+			if (!map.verifyTile(pos[i])) {
 				return false;
 			}
-			
-			if(i>0) {
-				if(! ((pos[i].getX()-1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getX()+1 == pos[i-1].getX() && pos[i].getY() == pos[i-1].getY()) || (pos[i].getY()+1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()) || (pos[i].getY()-1 == pos[i-1].getY() && pos[i-1].getX() == pos[i].getX()))) {
-					System.out.println("The tile is not adjacent to the previous ones"); 
+
+			if (i > 0) {
+				if (!((pos[i].getX() - 1 == pos[i - 1].getX() && pos[i].getY() == pos[i - 1].getY())
+						|| (pos[i].getX() + 1 == pos[i - 1].getX() && pos[i].getY() == pos[i - 1].getY())
+						|| (pos[i].getY() + 1 == pos[i - 1].getY() && pos[i - 1].getX() == pos[i].getX())
+						|| (pos[i].getY() - 1 == pos[i - 1].getY() && pos[i - 1].getX() == pos[i].getX()))) {
+					System.out.println("The tile is not adjacent to the previous ones");
 					return false;
 				}
-				
+
 				if (i > 1) {
-					if (! (pos[0].getX() == pos[2].getX() || pos[0].getY() == pos[2].getY())) {
-						System.out.println("The tile is not adjacent to the previous ones"); 
+					if (!(pos[0].getX() == pos[2].getX() || pos[0].getY() == pos[2].getY())) {
+						System.out.println("The tile is not adjacent to the previous ones");
 						return false;
 					}
 				}
 			}
 		}
-
-
-
 
 		this.putInLibrary(pos, map, nPlayers);
 
@@ -230,43 +229,29 @@ public class Player {
 
 	public void putInLibrary(Position p[], Map map, int nPlayers) {
 
-		for(int i=0;i<p.length;i++)
-		{
-			if(map.getTile(p[i]).getColor()==Color.BLUE)
-			{
-				System.out.print("\u001B[34m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
-			}
-			else if(map.getTile(p[i]).getColor()==Color.GREEN)
-			{
-				System.out.print("\u001B[32m"+map.getTile(p[i]).getColor()+ "\033[0m\t\t");
-			}
-			else if(map.getTile(p[i]).getColor()==Color.L_BLUE)
-			{
-				System.out.print("\u001B[36m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
-			}
-			else if(map.getTile(p[i]).getColor()==Color.PINK)
-			{
-				System.out.print("\u001B[35m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
-			}
-			else if(map.getTile(p[i]).getColor()==Color.WHITE)
-			{
-				System.out.print("\u001B[37m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
-			}
-			else if(map.getTile(p[i]).getColor()==Color.YELLOW)
-			{
-				System.out.print("\u001B[33m"+map.getTile(p[i]).getColor() + "\033[0m\t\t");
+		for (int i = 0; i < p.length; i++) {
+			if (map.getTile(p[i]).getColor() == Color.BLUE) {
+				System.out.print("\u001B[34m" + map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			} else if (map.getTile(p[i]).getColor() == Color.GREEN) {
+				System.out.print("\u001B[32m" + map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			} else if (map.getTile(p[i]).getColor() == Color.L_BLUE) {
+				System.out.print("\u001B[36m" + map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			} else if (map.getTile(p[i]).getColor() == Color.PINK) {
+				System.out.print("\u001B[35m" + map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			} else if (map.getTile(p[i]).getColor() == Color.WHITE) {
+				System.out.print("\u001B[37m" + map.getTile(p[i]).getColor() + "\033[0m\t\t");
+			} else if (map.getTile(p[i]).getColor() == Color.YELLOW) {
+				System.out.print("\u001B[33m" + map.getTile(p[i]).getColor() + "\033[0m\t\t");
 			}
 		}
-		Position p1[]=new Position[p.length];
+		Position p1[] = new Position[p.length];
 
-
-		for (int i=1;i<p.length;i++)
-		{
+		for (int i = 1; i < p.length; i++) {
 			int choice;
 
 			Scanner sc = new Scanner(System.in);
 			do {
-				System.out.println("insert which of "+p.length+" colors you want to insert in "+i+" position");
+				System.out.println("insert which of " + p.length + " colors you want to insert in " + i + " position");
 				try {
 					choice = Integer.parseInt(sc.next());
 				} catch (Exception e) {
@@ -276,77 +261,82 @@ public class Player {
 				if (choice > 3 || choice <= 0) {
 					System.out.println("Number not valid! Insert a number between 1 and 3\n");
 				}
-			} while(choice > 3 || choice <= 0);
-			p1[i-1]=new Position(p[choice-1].getX(),p[choice-1].getY()) ;
-			p[choice-1]=null;
+			} while (choice > 3 || choice <= 0);
+			p1[i - 1] = new Position(p[choice - 1].getX(), p[choice - 1].getY());
+			p[choice - 1] = null;
 		}
-		for(int i=0;i<p.length;i++)
-		{
-			if(p[i]!=null)
-			{
-				p1[p.length-1]=p[i];
-				//System.out.println("la pos"+p1[p.length-1].getX()+p1[p.length-1].getY());
+		for (int i = 0; i < p.length; i++) {
+			if (p[i] != null) {
+				p1[p.length - 1] = p[i];
+				// System.out.println("la pos"+p1[p.length-1].getX()+p1[p.length-1].getY());
 			}
 		}
-		/*for(int i=0;i<p1.length;i++)
-		{
-			System.out.println("la pos"+p1[i].getX()+p1[i].getY());
-		}*/
-		System.out.println("insert the column from 1 to 5");
+		/*
+		 * for(int i=0;i<p1.length;i++) {
+		 * System.out.println("la pos"+p1[i].getX()+p1[i].getY()); }
+		 */
 		Scanner sc = new Scanner(System.in);
 		boolean verifica_colonna = false;
 		int input = 0;
-		while (verifica_colonna == false) {
-			input = sc.nextInt();
-			if (input > 0 && input < 6) {
-				verifica_colonna = true;
-				input = input - 1;
+		do {
+			System.out.println("insert the column from 1 to 5");
+			try {
+				input = Integer.parseInt(sc.next());
+			} catch (Exception e) {
+				input = -1;
+
 			}
-		}
+			if(input>5 || input<=0) {
+				System.out.println("number not valid!\n");
+			}
+		} while (input > 5 || input <= 0);
+
+		input = input - 1;
+
 		int i = 5;
 		while (this.library.getTile(new Position(i, input)) != null) {
-		i = i - 1;
+			i = i - 1;
 		}
+		int cont = 0;
 		try {
 			// cerca prima riga libera
-			
-			
+
 			for (int f = 0; f < p1.length; f++) {
 				this.library.setTile(new Position(i - f, input), map.getTile(p1[f]));
+				cont++;
 			}
-			for(int j = 0; j < p1.length; j++) {
+			for (int j = 0; j < p1.length; j++) {
 				map.takeTile(p1[j]);
 			}
 		} catch (Exception e) {
-			for (int f = 0; f < p1.length; f++) {
+			for (int f = 0; f < cont; f++) {
 				this.library.setTile(new Position(i - f, input), null);
 			}
 			System.out.println("Not enough space in the selected column");
-			while (chooseTile(map, nPlayers)==false);
-			
+			while (chooseTile(map, nPlayers) == false)
+				;
+
 		}
 
 		/// il codice potrebbe crascare inserire eccezione
-
-		
 
 	}
 
 	public boolean isChair() {
 		return chair;
 	}
-	public int remove_adjacency(Library libreria, Position t1, Color c,int count) {
-		
-		Library lib= new Library (libreria);
+
+	public int remove_adjacency(Library libreria, Position t1, Color c, int count) {
+
+		Library lib = new Library(libreria);
 		if (t1.getX() + 1 < 6) {
 			if (lib.getTile(new Position(t1.getX() + 1, t1.getY())) != null) {
 				if (lib.getTile(new Position(t1.getX() + 1, t1.getY())).getColor() == c) {
 					count++;
 					lib.setTile(new Position(t1.getX() + 1, t1.getY()), null);
-					count=remove_adjacency(lib, new Position(t1.getX() + 1, t1.getY()), c,count);
+					count = remove_adjacency(lib, new Position(t1.getX() + 1, t1.getY()), c, count);
 
 				}
-
 
 			}
 		}
@@ -355,23 +345,24 @@ public class Player {
 				if (lib.getTile(new Position(t1.getX(), t1.getY() + 1)).getColor() == c) {
 					count++;
 					lib.setTile(new Position(t1.getX(), t1.getY() + 1), null);
-					count=remove_adjacency(lib, new Position(t1.getX(), t1.getY() + 1), c,count);
+					count = remove_adjacency(lib, new Position(t1.getX(), t1.getY() + 1), c, count);
 				}
 			}
 		}
 
 		if (t1.getY() - 1 >= 0) {
 			if (lib.getTile(new Position(t1.getX(), t1.getY() - 1)) != null) {
-				if (lib.getTile(new Position(t1.getX(), t1.getY() -1 )).getColor() == c) {
+				if (lib.getTile(new Position(t1.getX(), t1.getY() - 1)).getColor() == c) {
 					count++;
-					lib.setTile(new Position(t1.getX(), t1.getY() -1 ), null);
-					count=remove_adjacency(lib, new Position(t1.getX(), t1.getY() -1), c,count);
+					lib.setTile(new Position(t1.getX(), t1.getY() - 1), null);
+					count = remove_adjacency(lib, new Position(t1.getX(), t1.getY() - 1), c, count);
 
 				}
 			}
 		}
-		if(lib.getTile(new Position(t1.getX(), t1.getY()))!= null && lib.getTile(new Position(t1.getX(), t1.getY())).getColor()==c ) {
-			lib.setTile(new Position(t1.getX(), t1.getY()),null);
+		if (lib.getTile(new Position(t1.getX(), t1.getY())) != null
+				&& lib.getTile(new Position(t1.getX(), t1.getY())).getColor() == c) {
+			lib.setTile(new Position(t1.getX(), t1.getY()), null);
 			count++;
 		}
 
@@ -379,36 +370,31 @@ public class Player {
 	}
 
 	public void verifyPlanceGoal() {
-		int count=0;
+		int count = 0;
 		int goalPoints = 0;
-		Color color[]= {Color.BLUE, Color.PINK, Color.L_BLUE, Color.GREEN, Color.YELLOW, Color.WHITE};
-		for(int j=0;j<6;j++) {
+		Color color[] = { Color.BLUE, Color.PINK, Color.L_BLUE, Color.GREEN, Color.YELLOW, Color.WHITE };
+		for (int j = 0; j < 6; j++) {
 			for (int i = 0; i < 6; i++) {
 				for (int k = 0; k < 5; k++) {
-					if(this.library.getTile(new Position(i, k))!= null && this.library.getTile(new Position(i, k)).getColor()==color[j]) {
-						count=remove_adjacency(this.library, new Position(i,k), color[j], count);
+					if (this.library.getTile(new Position(i, k)) != null
+							&& this.library.getTile(new Position(i, k)).getColor() == color[j]) {
+						count = remove_adjacency(this.library, new Position(i, k), color[j], count);
 					}
-					if(count==3) {
-						goalPoints=2;
+					if (count == 3) {
+						goalPoints = 2;
+					} else if (count == 4) {
+						goalPoints = 3;
+					} else if (count == 5) {
+						goalPoints = 5;
+					} else if (count >= 6) {
+						goalPoints = 8;
 					}
-					else if(count==4) {
-						goalPoints=3;
-					}
-					else if(count==5) {
-						goalPoints=5;
-					}
-					else if(count>=6) {
-						goalPoints=8;
-					}
-					this.points+=goalPoints;
-					count=0;
-					goalPoints=0;
+					this.points += goalPoints;
+					count = 0;
+					goalPoints = 0;
 				}
 			}
-
 
 		}
 	}
 }
-
-
