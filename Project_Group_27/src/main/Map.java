@@ -283,6 +283,7 @@ public class Map {
 			return true;
 		}
 		System.out.println("Invalid tile");
+		System.out.println("---------------------------------------");
 		return false;
 	}
 
