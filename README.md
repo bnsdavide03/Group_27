@@ -85,3 +85,9 @@ Ogni giocatore guadagnerà:
 - 1/2/4/6/9/12 punti per 1/2/3/4/5/6 tessere Oggetto esattamente nella posizione indicata dalla sua carta Obiettivo Personale;
 - 2/3/5/8 punti per gruppi di 3/4/5/6+ tessere Oggetto adiacenti dello stesso tipo nella sua Libreria.
 - Il giocatore che ha totalizzato più punti vince la partita. In caso di parità, il giocatore in parità seduto più lontano (in senso orario) dal primo giocatore vince la partita.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-> GUIDA PER L'AVVIO DEL PROGRAMMA:
+ 
+- Importare la cartella "Project_Group_27" nell'IDE e avviare il programma da "main.java"
