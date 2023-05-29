@@ -24,7 +24,7 @@ public class Common_Goal06 extends Common_Goal {
 
 	public Common_Goal06(int nPlayers) {
 		super(nPlayers);
-		this.description = "Otto tessere dello stesso tipo. Non ci sono restrizioni sulla posizione di queste tessere";
+		this.description = "Eight tiles of the same type. There are no restrictions on the location of these tiles";
 	}
 
 	/**

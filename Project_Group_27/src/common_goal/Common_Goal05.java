@@ -25,7 +25,7 @@ public class Common_Goal05 extends Common_Goal {
 
 	public Common_Goal05(int nPlayers) {
 		super(nPlayers);
-		this.description = "Tre colonne formate ciscuna da 6 tessere di uno, due o tre tipi differenti. Colonne diverse possono avere combinazioni diverse di tipi di tessere";
+		this.description = "Three columns formed each by 6 tiles of one, two or three different types. Different columns can have different combinations of tile types";
 	}
 
 	/**

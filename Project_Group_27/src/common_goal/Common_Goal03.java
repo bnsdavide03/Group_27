@@ -24,7 +24,7 @@ public class Common_Goal03 extends Common_Goal {
 
 	public Common_Goal03(int nPlayers) {
 		super(nPlayers);
-		this.description = "quattro gruppi separati formati ciascuno da quattro tessere adiacenti dello stesso tipo. Le tessere di un gruppo possono essere diverse da quelle di un altro gruppo.";
+		this.description = "Four separate groups each consisting of four adjacent tiles of the same type. The tiles of one group may be different from those of another group";
 	}
 
 	/**

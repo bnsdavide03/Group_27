@@ -25,7 +25,7 @@ public class Common_Goal04 extends Common_Goal {
 
 	public Common_Goal04(int nPlayers) {
 		super(nPlayers);
-		this.description = "Due gruppi separati di 4 tessere dello stesso tipo che formano un quadrato 2x2. Le tessere dei due gruppo devono essere dello stesso tipo";
+		this.description = "Two separate groups of 4 tiles of the same type forming a 2x2 square. The cards of the two groups must be of the same type";
 	}
 
 	/**

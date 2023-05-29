@@ -23,7 +23,7 @@ public class Common_Goal02 extends Common_Goal {
 
 	public Common_Goal02(int nPlayers) {
 		super(nPlayers);
-		this.description = "quattro tessere dello stesso tipo ai quattro angoli della libreria";
+		this.description = "four tiles of the same type at the four corners of the bookcase";
 
 	}
 
