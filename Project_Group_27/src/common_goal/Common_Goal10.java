@@ -23,7 +23,7 @@ public class Common_Goal10 extends Common_Goal {
 
 	public Common_Goal10(int nPlayers) {
 		super(nPlayers);
-		this.description = "Due righe formate ciascuna da 5 diversi tipi di tessere";
+		this.description = "Two lines each made up of 5 different types of tiles";
 	}
 
 	/**
