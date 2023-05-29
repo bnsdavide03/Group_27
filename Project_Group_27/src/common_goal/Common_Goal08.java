@@ -25,7 +25,7 @@ public class Common_Goal08 extends Common_Goal {
 
 	public Common_Goal08(int nPlayers) {
 		super(nPlayers);
-		this.description = "Four lines each made up of 5 tiles of one, two or three different types. Different rows can have different combinations of tile types";
+		this.description = "Quattro righe formate ciascuna da 5 tessere di uno, due o tre tipi differenti. Righe diverse possono avere combinazioni diverse di tipi di tessere";
 	}
 
 	/**

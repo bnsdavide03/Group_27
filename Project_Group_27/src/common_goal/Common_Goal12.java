@@ -25,7 +25,7 @@ public class Common_Goal12 extends Common_Goal {
 
 	public Common_Goal12(int nPlayers) {
 		super(nPlayers);
-		this.description = "Five columns of ascending or descending height: Starting with the first column to the left or right, each succeeding column must consist of one more tile. Tiles can be of any type";
+		this.description = "Cinque colonne di altezza crescente o decrescente: a partire dalla prima colonna a sinistra o a destra, ogni colonna successiva deve essere formata da una tessera in più. Le tessere possono essere di qualsiasi tipo";
 	}
 
 	/**
