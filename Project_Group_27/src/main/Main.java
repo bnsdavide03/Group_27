@@ -30,7 +30,7 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		do {
-			System.out.println("Number of players: ");
+			System.out.print("Number of players: ");
 			try {
 				nPlayers = Integer.parseInt(sc.next());
 			} catch (Exception e) {
@@ -39,6 +39,7 @@ public class Main {
 
 			if (nPlayers > 4 || nPlayers <= 1) {
 				System.out.println("Number not valid! Insert a number between 2 and 4\n");
+				System.out.println("---------------------------------------");
 			}
 		} while (nPlayers > 4 || nPlayers <= 1);
 
@@ -48,8 +49,7 @@ public class Main {
 		int idInitialPlayer = rand.nextInt(upperbound);
 		// random to choose who has the chair
 		for (int i = 0; i < nPlayers; i++) { // create players into the array of players
-			System.out.println(i + 1 + " Player: ");
-			System.out.println("Name: ");
+			System.out.print(i + 1 + ")" + " Player's Name: ");
 			String name = sc.next();
 			boolean chair = false;
 			if (idInitialPlayer == i) {
@@ -74,8 +74,8 @@ public class Main {
 		Map m = new Map(nPlayers);
 		Common_Goal common_goals[] = new Common_Goal[2];
 		extractCommonGoal(common_goals, nPlayers);
-		System.out.println(common_goals[0].getClass().getSimpleName() + " " + common_goals[0].getDescription());
-		System.out.println(common_goals[1].getClass().getSimpleName() + " " + common_goals[1].getDescription());
+		System.out.println("Common Goal 1: \t" + common_goals[0].getDescription());
+		System.out.println("Common Goal 2: \t" + common_goals[1].getDescription());
 
 		System.out.println("Press Any Key To Continue...");
 		new java.util.Scanner(System.in).nextLine();
@@ -98,16 +98,18 @@ public class Main {
 				m.visualmap();
 				System.out.println("-------------------------------------");
 				System.out.println("Your library:");
-
+				System.out.println("");
+				System.out.println(" 1  2  3  4  5 ");
+				System.out.println("");
 				players[i].library.visualLibrary();
 				System.out.println("-------------------------------------");
 				System.out.println("PersonalGoal:");
 				players[i].getPersonalCard().Visual_Personal_Card();
 				System.out.println("-------------------------------------");
-				System.out.println("Common_Goal 1:");
-				System.out.println(common_goals[0].getClass().getSimpleName() + " " + common_goals[0].getDescription());
-				System.out.println("Common_Goal 2:");
-				System.out.println(common_goals[1].getClass().getSimpleName() + " " + common_goals[1].getDescription());
+				System.out.print("Common_Goal 1:");
+				System.out.println("\t" + common_goals[0].getDescription());
+				System.out.print("Common_Goal 2:");
+				System.out.println("\t" + common_goals[1].getDescription());
 				System.out.println("-------------------------------------");
 				boolean Verify_correct_choose;
 				do {

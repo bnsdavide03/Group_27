@@ -263,6 +263,7 @@ public class Map {
 		if (this.map[position.getX()][position.getY()] == null
 				|| this.map[position.getX()][position.getY()].getTile() == -1) {
 			System.out.println("Invalid selection: no tile found.");
+			System.out.println("---------------------------------------");
 			return false;
 		}
 		if ((position.getX() == 0 && position.getY() == 3) || (position.getX() == 0 && position.getY() == 4)

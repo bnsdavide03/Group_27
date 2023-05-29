@@ -191,6 +191,7 @@ public class Player {
 
 			if (choice > 3 || choice <= 0) {
 				System.out.println("Number not valid! Insert a number between 1 and 3\n");
+				System.out.println("---------------------------------------");
 			}
 		} while (choice > 3 || choice <= 0);
 
@@ -204,7 +205,7 @@ public class Player {
 
 			System.out.println("Enter coordinates of tile: " + (i + 1));
 			do {
-				System.out.println("\tEnter row value: ");
+				System.out.print("\tEnter row value: ");
 				try {
 					x = Integer.parseInt(sc.next());
 				} catch (Exception e) {
@@ -213,11 +214,12 @@ public class Player {
 
 				if (x > 8 || x < 0) {
 					System.out.println("Number not valid! Insert a number from 0 to 8\n");
+					System.out.println("---------------------------------------");
 				}
 			} while ((x > 8 || x < 0));
 
 			do {
-				System.out.println("\tEnter column value: ");
+				System.out.print("\tEnter column value: ");
 				try {
 					y = Integer.parseInt(sc.next());
 				} catch (Exception e) {
@@ -226,6 +228,7 @@ public class Player {
 
 				if (y > 8 || y < 0) {
 					System.out.println("Number not valid! Insert a number from 0 to 8\n");
+					System.out.println("---------------------------------------");
 				}
 			} while ((y > 8 || y < 0));
 			pos[i] = new Position(x, y);
@@ -240,12 +243,14 @@ public class Player {
 						|| (pos[i].getY() + 1 == pos[i - 1].getY() && pos[i - 1].getX() == pos[i].getX())
 						|| (pos[i].getY() - 1 == pos[i - 1].getY() && pos[i - 1].getX() == pos[i].getX()))) {
 					System.out.println("The tile is not adjacent to the previous ones");
+					System.out.println("---------------------------------------");
 					return false;
 				}
 
 				if (i > 1) {
 					if (!(pos[0].getX() == pos[2].getX() || pos[0].getY() == pos[2].getY())) {
 						System.out.println("The tile is not adjacent to the previous ones");
+						System.out.println("---------------------------------------");
 						return false;
 					}
 				}
@@ -345,6 +350,7 @@ public class Player {
 
 				if (choice > 3 || choice <= 0) {
 					System.out.println("Number not valid! Insert a number between 1 and 3\n");
+					System.out.println("---------------------------------------");
 				}
 			} while (choice > 3 || choice <= 0);
 			p1[i - 1] = new Position(p[choice - 1].getX(), p[choice - 1].getY());
@@ -372,6 +378,7 @@ public class Player {
 			}
 			if (input > 5 || input <= 0) {
 				System.out.println("number not valid!\n");
+				System.out.println("---------------------------------------");
 			}
 		} while (input > 5 || input <= 0);
 
@@ -397,6 +404,7 @@ public class Player {
 				this.library.setTile(new Position(i - f, input), null);
 			}
 			System.out.println("Not enough space in the selected column");
+			System.out.println("---------------------------------------");
 			while (chooseTile(map, nPlayers) == false)
 				;
 
