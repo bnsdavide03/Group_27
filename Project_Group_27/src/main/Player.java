@@ -200,6 +200,7 @@ public class Player {
 		// CHIEDERE ALLA PROFE
 
 		for (int i = 0; i < choice; i++) {
+			System.out.println("------------------------------------");
 
 			System.out.println("Enter coordinates of tile: " + (i + 1));
 			do {
@@ -211,7 +212,7 @@ public class Player {
 				}
 
 				if (x > 8 || x < 0) {
-					System.out.println("Number not valid! Insert a number from 0 to 9\n");
+					System.out.println("Number not valid! Insert a number from 0 to 8\n");
 				}
 			} while ((x > 8 || x < 0));
 
@@ -224,7 +225,7 @@ public class Player {
 				}
 
 				if (y > 8 || y < 0) {
-					System.out.println("Number not valid! Insert a number from 0 to 9\n");
+					System.out.println("Number not valid! Insert a number from 0 to 8\n");
 				}
 			} while ((y > 8 || y < 0));
 			pos[i] = new Position(x, y);
@@ -335,7 +336,7 @@ public class Player {
 
 			Scanner sc = new Scanner(System.in);
 			do {
-				System.out.println("insert which of " + p.length + " colors you want to insert in " + i + " position");
+				System.out.println("choose the order of the " + p.length + " tiles. Select which are in the " + i + " position. (insert the relative integer)");
 				try {
 					choice = Integer.parseInt(sc.next());
 				} catch (Exception e) {
@@ -356,7 +357,7 @@ public class Player {
 			}
 		}
 
-		System.out.println("inserisci la colonna da 1 a 5");
+		//System.out.println("inserisci la colonna da 1 a 5");
 
 		Scanner sc = new Scanner(System.in);
 		boolean verifica_colonna = false;
