@@ -42,7 +42,7 @@ public class Common_Goal04 extends Common_Goal {
 		// private Tile virtualLibrary[][]= new Tile[6][5];
 		virtualLibrary = library;
 
-		int quantità_quadrati_colore[] = new int[6];
+		int quantita_quadrati_colore[] = new int[6];
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 5; j++) {
 				// System.out.println("riga: " + i + " colonna: " + j + " posizione");
@@ -60,17 +60,17 @@ public class Common_Goal04 extends Common_Goal {
 									&& t1.getColor() == virtualLibrary.getTile(new Position(i, j + 1)).getColor()) {
 
 								if (t1.getColor() == Color.BLUE) {
-									quantità_quadrati_colore[0]++;
+									quantita_quadrati_colore[0]++;
 								} else if (t1.getColor() == Color.GREEN) {
-									quantità_quadrati_colore[1]++;
+									quantita_quadrati_colore[1]++;
 								} else if (t1.getColor() == Color.L_BLUE) {
-									quantità_quadrati_colore[2]++;
+									quantita_quadrati_colore[2]++;
 								} else if (t1.getColor() == Color.PINK) {
-									quantità_quadrati_colore[3]++;
+									quantita_quadrati_colore[3]++;
 								} else if (t1.getColor() == Color.WHITE) {
-									quantità_quadrati_colore[4]++;
+									quantita_quadrati_colore[4]++;
 								} else if (t1.getColor() == Color.YELLOW) {
-									quantità_quadrati_colore[5]++;
+									quantita_quadrati_colore[5]++;
 								}
 
 								// System.out.println("Count: "+count);
@@ -86,7 +86,7 @@ public class Common_Goal04 extends Common_Goal {
 		}
 
 		for (int i = 0; i < 6; i++) {
-			if (quantità_quadrati_colore[i] >= 2) {
+			if (quantita_quadrati_colore[i] >= 2) {
 				return true;
 			}
 
